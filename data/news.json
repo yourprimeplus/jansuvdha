@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-02T00:00:00+05:30",
+  "source": "JanSuvidha",
+  "notice": "Verify every update on the official government website before applying.",
+  "news": [
+    {
+      "id": "gov-001",
+      "title": "Check official government portals for latest announcements",
+      "title_hi": "नवीनतम सरकारी घोषणाओं के लिए आधिकारिक पोर्टल देखें",
+      "category": "Government",
+      "source": "India.gov.in",
+      "date": "2026-10-02",
+      "url": "https://www.india.gov.in/"
+    },
+    {
+      "id": "edu-001",
+      "title": "Students should verify scholarship deadlines and application status",
+      "title_hi": "छात्र छात्रवृत्ति की अंतिम तिथि और आवेदन स्थिति अवश्य जाँचें",
+      "category": "Education",
+      "source": "National Scholarship Portal",
+      "date": "2026-10-02",
+      "url": "https://scholarships.gov.in/"
+    },
+    {
+      "id": "job-001",
+      "title": "Check official recruitment notifications before applying for government jobs",
+      "title_hi": "सरकारी नौकरी के लिए आवेदन करने से पहले आधिकारिक भर्ती सूचना जाँचें",
+      "category": "Jobs",
+      "source": "National Career Service",
+      "date": "2026-10-02",
+      "url": "https://www.ncs.gov.in/"
+    },
+    {
+      "id": "farmer-001",
+      "title": "Farmers can check official portals for current agriculture schemes",
+      "title_hi": "किसान वर्तमान कृषि योजनाओं के लिए आधिकारिक पोर्टल देख सकते हैं",
+      "category": "Farmer",
+      "source": "Department of Agriculture",
+      "date": "2026-10-02",
+      "url": "https://agriwelfare.gov.in/"
+    },
+    {
+      "id": "health-001",
+      "title": "Check official health portals for government health services",
+      "title_hi": "सरकारी स्वास्थ्य सेवाओं के लिए आधिकारिक स्वास्थ्य पोर्टल देखें",
+      "category": "Health",
+      "source": "Ministry of Health and Family Welfare",
+      "date": "2026-10-02",
+      "url": "https://www.mohfw.gov.in/"
+    },
+    {
+      "id": "housing-001",
+      "title": "Check official housing portals for current housing schemes",
+      "title_hi": "वर्तमान आवास योजनाओं के लिए आधिकारिक आवास पोर्टल देखें",
+      "category": "Housing",
+      "source": "Government of India",
+      "date": "2026-10-02",
+      "url": "https://pmaymis.gov.in/"
+    },
+    {
+      "id": "digital-001",
+      "title": "Access government digital services through official portals",
+      "title_hi": "आधिकारिक पोर्टल के माध्यम से सरकारी डिजिटल सेवाओं का उपयोग करें",
+      "category": "Digital Services",
+      "source": "Digital India",
+      "date": "2026-10-02",
+      "url": "https://www.digitalindia.gov.in/"
+    },
+    {
+      "id": "bihar-001",
+      "title": "Check Bihar Government portal for latest state-level services and announcements",
+      "title_hi": "बिहार की नवीनतम सरकारी सेवाओं और घोषणाओं के लिए आधिकारिक पोर्टल देखें",
+      "category": "Bihar",
+      "source": "Government of Bihar",
+      "date": "2026-10-02",
+      "url": "https://state.bihar.gov.in/"
+    }
+  ]
+}
