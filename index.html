@@ -1817,6 +1817,395 @@ document.addEventListener(
 
 </script>
 
+<!-- =========================================
+     JAN SUVIDHA - PROFILE MODAL
+========================================= -->
 
+<div
+    id="profileModal"
+    style="
+        display:none;
+        position:fixed;
+        inset:0;
+        z-index:5000;
+        background:rgba(0,0,0,.65);
+        align-items:center;
+        justify-content:center;
+        padding:18px;
+    "
+>
+
+    <div
+        style="
+            width:100%;
+            max-width:520px;
+            max-height:92vh;
+            overflow:auto;
+            background:var(--card,#fff);
+            color:var(--text,#142338);
+            border-radius:20px;
+            padding:24px;
+            box-shadow:0 20px 60px rgba(0,0,0,.3);
+        "
+    >
+
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                gap:10px;
+                margin-bottom:18px;
+            "
+        >
+
+            <div>
+
+                <h2 style="margin:0;">
+                    👤 My Profile
+                </h2>
+
+                <p
+                    class="muted"
+                    style="margin:5px 0 0;"
+                >
+                    Save your preferences once.
+                </p>
+
+            </div>
+
+            <button
+                onclick="closeProfile()"
+                style="
+                    border:0;
+                    background:#eef2f6;
+                    width:36px;
+                    height:36px;
+                    border-radius:50%;
+                    font-size:18px;
+                "
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <form
+            onsubmit="
+                event.preventDefault();
+                saveProfile();
+            "
+        >
+
+            <label>
+                Name
+            </label>
+
+            <input
+                id="profileName"
+                type="text"
+                placeholder="Enter your name"
+                autocomplete="name"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+
+            <label>
+                State
+            </label>
+
+            <select
+                id="profileState"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+                <option value="">
+                    Select State
+                </option>
+
+                <option>Bihar</option>
+                <option>Jharkhand</option>
+                <option>West Bengal</option>
+                <option>Uttar Pradesh</option>
+                <option>Delhi</option>
+                <option>Maharashtra</option>
+                <option>Madhya Pradesh</option>
+                <option>Rajasthan</option>
+                <option>Gujarat</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+                <option>Odisha</option>
+                <option>Assam</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+                <option>Kerala</option>
+                <option>Telangana</option>
+                <option>Andhra Pradesh</option>
+                <option>Other</option>
+
+            </select>
+
+
+            <label>
+                Age
+            </label>
+
+            <input
+                id="profileAge"
+                type="number"
+                min="1"
+                max="120"
+                placeholder="Enter age"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+
+            <label>
+                Education
+            </label>
+
+            <select
+                id="profileEducation"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+                <option value="">
+                    Select Education
+                </option>
+
+                <option>10th</option>
+                <option>12th</option>
+                <option>ITI</option>
+                <option>Diploma</option>
+                <option>Graduation</option>
+                <option>Post Graduation</option>
+                <option>Other</option>
+
+            </select>
+
+
+            <label>
+                Occupation
+            </label>
+
+            <select
+                id="profileOccupation"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+                <option value="">
+                    Select Occupation
+                </option>
+
+                <option value="student">
+                    Student
+                </option>
+
+                <option value="farmer">
+                    Farmer
+                </option>
+
+                <option value="business">
+                    Business / Self Employed
+                </option>
+
+                <option value="job">
+                    Private / Government Job
+                </option>
+
+                <option value="unemployed">
+                    Looking for Work
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>
+                Category
+            </label>
+
+            <select
+                id="profileCategory"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 14px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+                <option value="">
+                    Select Category
+                </option>
+
+                <option>General</option>
+                <option>OBC</option>
+                <option>EBC</option>
+                <option>SC</option>
+                <option>ST</option>
+                <option>Other</option>
+
+            </select>
+
+
+            <label>
+                You are mainly looking for
+            </label>
+
+            <select
+                id="profileUserType"
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin:6px 0 20px;
+                    border:1px solid var(--border);
+                    border-radius:9px;
+                    background:transparent;
+                    color:inherit;
+                "
+            >
+
+                <option value="">
+                    Select
+                </option>
+
+                <option value="student">
+                    Student & Scholarships
+                </option>
+
+                <option value="job">
+                    Jobs & Career
+                </option>
+
+                <option value="farmer">
+                    Farmer Schemes
+                </option>
+
+                <option value="business">
+                    Business & Loans
+                </option>
+
+                <option value="family">
+                    Family & Welfare
+                </option>
+
+            </select>
+
+
+            <div
+                style="
+                    display:flex;
+                    gap:9px;
+                    flex-wrap:wrap;
+                "
+            >
+
+                <button
+                    type="submit"
+                    style="
+                        flex:1;
+                        min-width:150px;
+                        padding:12px;
+                        border:0;
+                        border-radius:9px;
+                        background:var(--primary);
+                        color:#fff;
+                        font-weight:800;
+                    "
+                >
+                    💾 Save Preferences
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="removeProfile()"
+                    style="
+                        padding:12px 15px;
+                        border:1px solid #e0a0a0;
+                        border-radius:9px;
+                        background:transparent;
+                        color:#c22;
+                        font-weight:700;
+                    "
+                >
+                    Remove
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <p
+            class="muted"
+            style="
+                margin:16px 0 0;
+                font-size:11px;
+                line-height:1.5;
+            "
+        >
+            🔒 Your preferences are stored locally
+            in this browser. Do not enter Aadhaar,
+            bank account, OTP, password or other
+            sensitive information here.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Profile JavaScript -->
+
+<script src="./js/profile.js"></script>
 </body>
 </html>
