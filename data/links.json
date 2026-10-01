@@ -1,0 +1,90 @@
+[
+  {
+    "id": "india",
+    "name": "National Portal of India",
+    "nameHi": "भारत का राष्ट्रीय पोर्टल",
+    "category": "Government",
+    "categoryHi": "सरकारी",
+    "description": "Official National Portal of India.",
+    "descriptionHi": "भारत सरकार का आधिकारिक राष्ट्रीय पोर्टल।",
+    "url": "https://www.india.gov.in/",
+    "official": true
+  },
+  {
+    "id": "myscheme",
+    "name": "myScheme",
+    "nameHi": "मायस्कीम",
+    "category": "Schemes",
+    "categoryHi": "योजनाएँ",
+    "description": "Find government schemes and eligibility information.",
+    "descriptionHi": "सरकारी योजनाएँ और पात्रता की जानकारी खोजें।",
+    "url": "https://www.myscheme.gov.in/",
+    "official": true
+  },
+  {
+    "id": "pib",
+    "name": "Press Information Bureau",
+    "nameHi": "प्रेस सूचना ब्यूरो",
+    "category": "News",
+    "categoryHi": "समाचार",
+    "description": "Official Government of India news and press releases.",
+    "descriptionHi": "भारत सरकार की आधिकारिक खबरें और प्रेस विज्ञप्तियाँ।",
+    "url": "https://www.pib.gov.in/",
+    "official": true
+  },
+  {
+    "id": "digilocker",
+    "name": "DigiLocker",
+    "nameHi": "डिजीलॉकर",
+    "category": "Documents",
+    "categoryHi": "दस्तावेज",
+    "description": "Access and manage digital government documents.",
+    "descriptionHi": "डिजिटल सरकारी दस्तावेजों को सुरक्षित रूप से प्राप्त करें।",
+    "url": "https://www.digilocker.gov.in/",
+    "official": true
+  },
+  {
+    "id": "uidai",
+    "name": "UIDAI",
+    "nameHi": "UIDAI आधार",
+    "category": "Aadhaar",
+    "categoryHi": "आधार",
+    "description": "Official Aadhaar services and information.",
+    "descriptionHi": "आधार की आधिकारिक सेवाएँ और जानकारी।",
+    "url": "https://uidai.gov.in/",
+    "official": true
+  },
+  {
+    "id": "umang",
+    "name": "UMANG",
+    "nameHi": "उमंग",
+    "category": "Services",
+    "categoryHi": "सेवाएँ",
+    "description": "Access multiple government services from one platform.",
+    "descriptionHi": "एक ही प्लेटफॉर्म से कई सरकारी सेवाओं का उपयोग करें।",
+    "url": "https://web.umang.gov.in/",
+    "official": true
+  },
+  {
+    "id": "india-post",
+    "name": "India Post",
+    "nameHi": "इंडिया पोस्ट",
+    "category": "Postal",
+    "categoryHi": "डाक सेवा",
+    "description": "Official India Post services.",
+    "descriptionHi": "इंडिया पोस्ट की आधिकारिक सेवाएँ।",
+    "url": "https://www.indiapost.gov.in/",
+    "official": true
+  },
+  {
+    "id": "ncs",
+    "name": "National Career Service",
+    "nameHi": "राष्ट्रीय करियर सेवा",
+    "category": "Jobs",
+    "categoryHi": "नौकरी",
+    "description": "Government employment and career services.",
+    "descriptionHi": "सरकारी रोजगार और करियर सेवाएँ।",
+    "url": "https://www.ncs.gov.in/",
+    "official": true
+  }
+]
