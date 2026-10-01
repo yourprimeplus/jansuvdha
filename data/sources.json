@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-02",
+  "sources": [
+    {
+      "id": "india-portal",
+      "name": "National Portal of India",
+      "name_hi": "राष्ट्रीय पोर्टल ऑफ इंडिया",
+      "category": "Government",
+      "url": "https://www.india.gov.in/",
+      "official": true
+    },
+    {
+      "id": "schemes",
+      "name": "Government Schemes",
+      "name_hi": "सरकारी योजनाएँ",
+      "category": "Schemes",
+      "url": "https://www.india.gov.in/my-government/schemes",
+      "official": true
+    },
+    {
+      "id": "services",
+      "name": "National Government Services Portal",
+      "name_hi": "राष्ट्रीय सरकारी सेवा पोर्टल",
+      "category": "Services",
+      "url": "https://services.india.gov.in/",
+      "official": true
+    },
+    {
+      "id": "scholarship",
+      "name": "National Scholarship Portal",
+      "name_hi": "राष्ट्रीय छात्रवृत्ति पोर्टल",
+      "category": "Education",
+      "url": "https://scholarships.gov.in/",
+      "official": true
+    },
+    {
+      "id": "ncs",
+      "name": "National Career Service",
+      "name_hi": "राष्ट्रीय करियर सेवा",
+      "category": "Jobs",
+      "url": "https://www.ncs.gov.in/",
+      "official": true
+    },
+    {
+      "id": "digital-india",
+      "name": "Digital India",
+      "name_hi": "डिजिटल इंडिया",
+      "category": "Digital Services",
+      "url": "https://www.digitalindia.gov.in/",
+      "official": true
+    },
+    {
+      "id": "mohfw",
+      "name": "Ministry of Health and Family Welfare",
+      "name_hi": "स्वास्थ्य एवं परिवार कल्याण मंत्रालय",
+      "category": "Health",
+      "url": "https://www.mohfw.gov.in/",
+      "official": true
+    },
+    {
+      "id": "agriculture",
+      "name": "Department of Agriculture and Farmers Welfare",
+      "name_hi": "कृषि एवं किसान कल्याण विभाग",
+      "category": "Farmer",
+      "url": "https://agriwelfare.gov.in/",
+      "official": true
+    },
+    {
+      "id": "bihar",
+      "name": "Government of Bihar",
+      "name_hi": "बिहार सरकार",
+      "category": "Bihar",
+      "url": "https://state.bihar.gov.in/",
+      "official": true
+    }
+  ]
+}
