@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM-KISAN Samman Nidhi",
+    "nameHi": "पीएम-किसान सम्मान निधि",
+    "category": "Farmer",
+    "categoryHi": "कृषि योजना",
+    "description": "Financial support scheme for eligible farmer families.",
+    "descriptionHi": "पात्र किसान परिवारों के लिए आर्थिक सहायता योजना।",
+    "state": "All India",
+    "officialUrl": "https://pmkisan.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "pm-awas",
+    "name": "PMAY - Pradhan Mantri Awas Yojana",
+    "nameHi": "प्रधानमंत्री आवास योजना",
+    "category": "Housing",
+    "categoryHi": "आवास",
+    "description": "Government housing assistance scheme for eligible beneficiaries.",
+    "descriptionHi": "पात्र लाभार्थियों के लिए सरकारी आवास सहायता योजना।",
+    "state": "All India",
+    "officialUrl": "https://pmaymis.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "ayushman-bharat",
+    "name": "Ayushman Bharat PM-JAY",
+    "nameHi": "आयुष्मान भारत PM-JAY",
+    "category": "Health",
+    "categoryHi": "स्वास्थ्य",
+    "description": "Government health coverage scheme for eligible families.",
+    "descriptionHi": "पात्र परिवारों के लिए सरकारी स्वास्थ्य कवरेज योजना।",
+    "state": "All India",
+    "officialUrl": "https://pmjay.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "nsp",
+    "name": "National Scholarship Portal",
+    "nameHi": "राष्ट्रीय छात्रवृत्ति पोर्टल",
+    "category": "Scholarship",
+    "categoryHi": "छात्रवृत्ति",
+    "description": "Official portal for various government scholarships.",
+    "descriptionHi": "विभिन्न सरकारी छात्रवृत्तियों के लिए आधिकारिक पोर्टल।",
+    "state": "All India",
+    "officialUrl": "https://scholarships.gov.in/",
+    "status": "active"
+  }
+]
