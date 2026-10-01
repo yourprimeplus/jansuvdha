@@ -2270,5 +2270,186 @@ loadAutoNews();
   renderTrending();
 }, 5 * 60 * 1000);
    </script>
+   <!-- =========================================
+     SCHEME DETAILS MODAL
+========================================= -->
+
+<div
+    id="schemeDetailsModal"
+    style="
+        display:none;
+        position:fixed;
+        inset:0;
+        z-index:99999;
+        background:rgba(0,0,0,.65);
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+    "
+>
+
+    <div
+        style="
+            width:min(700px,100%);
+            max-height:90vh;
+            overflow:auto;
+            background:var(--card-bg,#ffffff);
+            color:var(--text,#111827);
+            border-radius:18px;
+            padding:24px;
+            position:relative;
+            box-shadow:0 20px 60px rgba(0,0,0,.3);
+        "
+    >
+
+        <button
+            type="button"
+            onclick="JanSchemeDetails.close()"
+            aria-label="Close"
+            style="
+                position:absolute;
+                right:15px;
+                top:15px;
+                width:38px;
+                height:38px;
+                border:0;
+                border-radius:50%;
+                cursor:pointer;
+                font-size:20px;
+            "
+        >
+            ×
+        </button>
+
+
+        <span
+            class="section-label"
+        >
+            🇮🇳 GOVERNMENT SCHEME
+        </span>
+
+
+        <h2
+            id="schemeDetailsTitle"
+            style="
+                margin-top:10px;
+                padding-right:45px;
+            "
+        >
+            Scheme Details
+        </h2>
+
+
+        <p
+            id="schemeDetailsDescription"
+            class="muted"
+        >
+            Official scheme information.
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+            💰 Benefits
+        </h3>
+
+        <div
+            id="schemeDetailsBenefits"
+        >
+            Loading...
+        </div>
+
+
+        <h3
+            style="margin-top:20px;"
+        >
+            ✅ Eligibility
+        </h3>
+
+        <div
+            id="schemeDetailsEligibility"
+        >
+            Loading...
+        </div>
+
+
+        <h3
+            style="margin-top:20px;"
+        >
+            📄 Required Documents
+        </h3>
+
+        <div
+            id="schemeDetailsDocuments"
+        >
+            Loading...
+        </div>
+
+
+        <div
+            style="
+                margin-top:25px;
+                display:flex;
+                gap:10px;
+                flex-wrap:wrap;
+            "
+        >
+
+            <a
+                id="schemeDetailsApply"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    padding:12px 18px;
+                    border-radius:10px;
+                    background:var(--primary,#2563eb);
+                    color:#fff;
+                    text-decoration:none;
+                    font-weight:800;
+                "
+            >
+                Apply / Official Website ↗
+            </a>
+
+
+            <button
+                type="button"
+                onclick="JanSchemeDetails.close()"
+                style="
+                    padding:12px 18px;
+                    border:1px solid #ddd;
+                    border-radius:10px;
+                    background:transparent;
+                    cursor:pointer;
+                    font-weight:700;
+                "
+            >
+                Close
+            </button>
+
+        </div>
+
+
+        <p
+            class="muted"
+            style="
+                margin-top:20px;
+                font-size:12px;
+            "
+        >
+            ⚠️ Eligibility and benefits can change.
+            Always verify the latest information on
+            the official government portal before applying.
+        </p>
+
+    </div>
+
+</div>
 </body>
 </html>
