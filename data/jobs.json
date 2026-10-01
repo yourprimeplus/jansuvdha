@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ssc",
+    "name": "Staff Selection Commission",
+    "nameHi": "कर्मचारी चयन आयोग",
+    "category": "Government Jobs",
+    "categoryHi": "सरकारी नौकरी",
+    "description": "Official portal for SSC recruitment, examinations and notifications.",
+    "descriptionHi": "SSC भर्ती, परीक्षाओं और notifications के लिए आधिकारिक पोर्टल।",
+    "state": "All India",
+    "officialUrl": "https://ssc.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "upsc",
+    "name": "Union Public Service Commission",
+    "nameHi": "संघ लोक सेवा आयोग",
+    "category": "Government Jobs",
+    "categoryHi": "सरकारी नौकरी",
+    "description": "Official UPSC portal for civil services and other examinations.",
+    "descriptionHi": "सिविल सेवा और अन्य परीक्षाओं के लिए आधिकारिक UPSC पोर्टल।",
+    "state": "All India",
+    "officialUrl": "https://upsc.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "ibps",
+    "name": "Institute of Banking Personnel Selection",
+    "nameHi": "बैंकिंग कार्मिक चयन संस्थान",
+    "category": "Bank Jobs",
+    "categoryHi": "बैंकिंग नौकरी",
+    "description": "Official portal for banking recruitment examinations.",
+    "descriptionHi": "बैंकिंग भर्ती परीक्षाओं के लिए आधिकारिक पोर्टल।",
+    "state": "All India",
+    "officialUrl": "https://www.ibps.in/",
+    "status": "active"
+  },
+  {
+    "id": "ncs",
+    "name": "National Career Service",
+    "nameHi": "राष्ट्रीय करियर सेवा",
+    "category": "Jobs",
+    "categoryHi": "नौकरी",
+    "description": "Government platform for jobs, career services and employment opportunities.",
+    "descriptionHi": "नौकरी, करियर सेवाओं और रोजगार के अवसरों के लिए सरकारी प्लेटफॉर्म।",
+    "state": "All India",
+    "officialUrl": "https://www.ncs.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "bihar-job",
+    "name": "Bihar Government Recruitment",
+    "nameHi": "बिहार सरकारी भर्ती",
+    "category": "Government Jobs",
+    "categoryHi": "सरकारी नौकरी",
+    "description": "Official Bihar government recruitment and employment information.",
+    "descriptionHi": "बिहार सरकार की भर्ती और रोजगार संबंधी आधिकारिक जानकारी।",
+    "state": "Bihar",
+    "officialUrl": "https://bihar.gov.in/",
+    "status": "active"
+  }
+]
