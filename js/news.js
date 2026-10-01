@@ -1,69 +1,116 @@
 /* =========================================
-   JanSuvidha - Government News System
-   ========================================= */
+   JanSuvidha - News System
+   Loads news from data/news.json
+========================================= */
 
 const JanNews = {
 
-    /* -----------------------------------------
-       Configuration
-    ----------------------------------------- */
+    dataURL: "./data/news.json",
 
     storageKey: "jansuvdha_news_cache",
 
     maxNews: 20,
 
-    /* -----------------------------------------
-       Default News
-       ----------------------------------------- */
-
     defaultNews: [
-
         {
             id: "default-1",
             title: "Check official government portals for latest announcements.",
-            title_hi: "नवीनतम घोषणाओं के लिए आधिकारिक सरकारी पोर्टल देखें।",
+            title_hi: "नवीनतम सरकारी घोषणाओं के लिए आधिकारिक सरकारी पोर्टल देखें।",
             category: "Government",
-            date: "",
             source: "JanSuvidha",
-            url: "#"
-        },
+            date: "",
+            url: "https://www.india.gov.in/"
+        }
+    ],
 
-        {
-            id: "default-2",
-            title: "Students should verify scholarship deadlines before applying.",
-            title_hi: "आवेदन करने से पहले छात्र छात्रवृत्ति की अंतिम तिथि अवश्य जाँचें।",
-            category: "Education",
-            date: "",
-            source: "JanSuvidha",
-            url: "#"
-        },
+    /* -----------------------------------------
+       Load News JSON
+    ----------------------------------------- */
 
-        {
-            id: "default-3",
-            title: "Job seekers should verify recruitment notifications from official sources.",
-            title_hi: "नौकरी की सूचना हमेशा आधिकारिक स्रोत से सत्यापित करें।",
-            category: "Jobs",
-            date: "",
-            source: "JanSuvidha",
-            url: "#"
-        },
+    async load() {
 
-        {
-            id: "default-4",
-            title: "Farmers can check official agriculture portals for current schemes.",
-            title_hi: "किसान वर्तमान योजनाओं के लिए आधिकारिक कृषि पोर्टल देख सकते हैं।",
-            category: "Farmer",
-            date: "",
-            source: "JanSuvidha",
-            url: "#"
+        try {
+
+            const response = await fetch(
+                this.dataURL + "?v=" + Date.now(),
+                {
+                    cache: "no-store"
+                }
+            );
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "News JSON could not be loaded"
+                );
+
+            }
+
+            const data =
+                await response.json();
+
+            if (
+                !data ||
+                !Array.isArray(data.news)
+            ) {
+
+                throw new Error(
+                    "Invalid news.json format"
+                );
+
+            }
+
+            const news =
+                this.removeDuplicates(
+                    data.news
+                ).slice(
+                    0,
+                    this.maxNews
+                );
+
+            this.saveNews(news);
+
+            this.render();
+
+            console.log(
+                "JanSuvidha: News loaded successfully",
+                news
+            );
+
+            return news;
+
+        } catch (error) {
+
+            console.error(
+                "JanSuvidha News Error:",
+                error
+            );
+
+            const cached =
+                this.getCachedNews();
+
+            if (cached.length) {
+
+                this.render();
+
+                return cached;
+
+            }
+
+            this.render(
+                this.defaultNews
+            );
+
+            return this.defaultNews;
+
         }
 
-    ],
+    },
 
 
     /* -----------------------------------------
-       Get Cached News
-       ----------------------------------------- */
+       Cache
+    ----------------------------------------- */
 
     getCachedNews() {
 
@@ -89,11 +136,6 @@ const JanNews = {
 
         } catch (error) {
 
-            console.error(
-                "News cache error:",
-                error
-            );
-
             return [];
 
         }
@@ -101,34 +143,19 @@ const JanNews = {
     },
 
 
-    /* -----------------------------------------
-       Save News
-       ----------------------------------------- */
-
     saveNews(news) {
-
-        if (!Array.isArray(news)) {
-
-            return;
-
-        }
-
-        const cleaned =
-            news
-                .filter(item => item && item.title)
-                .slice(0, this.maxNews);
 
         try {
 
             localStorage.setItem(
                 this.storageKey,
-                JSON.stringify(cleaned)
+                JSON.stringify(news)
             );
 
         } catch (error) {
 
             console.error(
-                "News save error:",
+                "Could not save news cache:",
                 error
             );
 
@@ -138,58 +165,8 @@ const JanNews = {
 
 
     /* -----------------------------------------
-       Get All News
-       ----------------------------------------- */
-
-    getNews() {
-
-        const cached =
-            this.getCachedNews();
-
-        if (cached.length) {
-
-            return cached;
-
-        }
-
-        return this.defaultNews;
-
-    },
-
-
-    /* -----------------------------------------
-       Add News
-       ----------------------------------------- */
-
-    addNews(item) {
-
-        if (!item || !item.title) {
-
-            return;
-
-        }
-
-        const current =
-            this.getNews();
-
-        const news = [
-
-            item,
-
-            ...current
-
-        ];
-
-        this.saveNews(news);
-
-        this.render();
-
-    },
-
-
-    /* -----------------------------------------
-       Remove Duplicate News
-       ----------------------------------------- */
+       Remove Duplicates
+    ----------------------------------------- */
 
     removeDuplicates(news) {
 
@@ -227,8 +204,8 @@ const JanNews = {
 
 
     /* -----------------------------------------
-       Format Date
-       ----------------------------------------- */
+       Date Formatter
+    ----------------------------------------- */
 
     formatDate(date) {
 
@@ -240,12 +217,12 @@ const JanNews = {
 
         try {
 
-            const parsed =
+            const d =
                 new Date(date);
 
             if (
                 Number.isNaN(
-                    parsed.getTime()
+                    d.getTime()
                 )
             ) {
 
@@ -261,7 +238,7 @@ const JanNews = {
                     month: "short",
                     year: "numeric"
                 }
-            ).format(parsed);
+            ).format(d);
 
         } catch (error) {
 
@@ -273,10 +250,33 @@ const JanNews = {
 
 
     /* -----------------------------------------
-       Render News
-       ----------------------------------------- */
+       Get Current Language
+    ----------------------------------------- */
 
-    render() {
+    getLanguage() {
+
+        if (
+            typeof JanLanguage !==
+            "undefined"
+        ) {
+
+            return (
+                JanLanguage.current ||
+                "en"
+            );
+
+        }
+
+        return "en";
+
+    },
+
+
+    /* -----------------------------------------
+       Render News
+    ----------------------------------------- */
+
+    render(newsData = null) {
 
         const container =
             document.getElementById(
@@ -289,17 +289,10 @@ const JanNews = {
 
         }
 
-        let news =
-            this.getNews();
-
-        news =
-            this.removeDuplicates(
-                news
-            )
-            .slice(
-                0,
-                this.maxNews
-            );
+        const news =
+            Array.isArray(newsData)
+                ? newsData
+                : this.getCachedNews();
 
 
         if (!news.length) {
@@ -308,9 +301,9 @@ const JanNews = {
 
                 <div class="news-item">
 
-                    <span>
+                    <strong>
                         No latest updates available.
-                    </span>
+                    </strong>
 
                 </div>
 
@@ -322,120 +315,223 @@ const JanNews = {
 
 
         const language =
-            typeof JanLanguage !== "undefined"
-                ? JanLanguage.current
-                : "en";
+            this.getLanguage();
 
 
         container.innerHTML =
 
-            news.map(item => {
+            news
+                .slice(
+                    0,
+                    this.maxNews
+                )
+                .map(item => {
 
-                const title =
-                    language === "hi"
-                        ? (
-                            item.title_hi ||
-                            item.title
-                        )
-                        : item.title;
-
-
-                const date =
-                    this.formatDate(
-                        item.date
-                    );
-
-
-                const hasURL =
-                    item.url &&
-                    item.url !== "#";
+                    const title =
+                        language === "hi"
+                            ? (
+                                item.title_hi ||
+                                item.title
+                            )
+                            : item.title;
 
 
-                return `
+                    const date =
+                        this.formatDate(
+                            item.date
+                        );
 
-                    <div class="news-item">
 
-                        <span class="live-badge">
-                            ${escapeHTML(
-                                item.category ||
-                                "UPDATE"
-                            )}
-                        </span>
+                    const category =
+                        item.category ||
+                        "UPDATE";
 
-                        <span style="flex:1;">
 
-                            ${
-                                hasURL
-                                ? `
-                                    <a
-                                        href="${safeURL(item.url)}"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style="
-                                            font-weight:700;
-                                        "
-                                    >
-                                        ${escapeHTML(title)}
-                                    </a>
-                                `
-                                : `
-                                    <strong>
-                                        ${escapeHTML(title)}
-                                    </strong>
-                                `
-                            }
+                    const source =
+                        item.source ||
+                        "";
 
-                            ${
-                                date
-                                ? `
-                                    <br>
-                                    <small class="muted">
-                                        ${escapeHTML(date)}
-                                    </small>
-                                `
-                                : ""
-                            }
 
-                        </span>
+                    const url =
+                        item.url ||
+                        "#";
 
-                    </div>
 
-                `;
+                    return `
 
-            }).join("");
+                        <div
+                            class="news-item"
+                            data-category="${escapeHTML(category)}"
+                        >
+
+                            <span class="live-badge">
+                                ${escapeHTML(category)}
+                            </span>
+
+                            <span
+                                style="
+                                    flex:1;
+                                    min-width:0;
+                                "
+                            >
+
+                                <a
+                                    href="${safeURL(url)}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="
+                                        font-weight:700;
+                                        text-decoration:none;
+                                    "
+                                >
+                                    ${escapeHTML(title)}
+                                </a>
+
+                                <br>
+
+                                <small class="muted">
+
+                                    ${
+                                        source
+                                            ? escapeHTML(source)
+                                            : ""
+                                    }
+
+                                    ${
+                                        date
+                                            ? " • " +
+                                              escapeHTML(date)
+                                            : ""
+                                    }
+
+                                </small>
+
+                            </span>
+
+                        </div>
+
+                    `;
+
+                })
+                .join("");
 
     },
 
 
     /* -----------------------------------------
-       Filter News
-       ----------------------------------------- */
+       Search News
+    ----------------------------------------- */
+
+    search(keyword) {
+
+        const news =
+            this.getCachedNews();
+
+        const query =
+            String(
+                keyword || ""
+            )
+            .trim()
+            .toLowerCase();
+
+
+        if (!query) {
+
+            this.render(news);
+
+            return news;
+
+        }
+
+
+        const results =
+            news.filter(item => {
+
+                const text = (
+
+                    String(
+                        item.title || ""
+                    ) +
+
+                    " " +
+
+                    String(
+                        item.title_hi || ""
+                    ) +
+
+                    " " +
+
+                    String(
+                        item.category || ""
+                    ) +
+
+                    " " +
+
+                    String(
+                        item.source || ""
+                    )
+
+                ).toLowerCase();
+
+
+                return text.includes(query);
+
+            });
+
+
+        this.render(results);
+
+        return results;
+
+    },
+
+
+    /* -----------------------------------------
+       Category Filter
+    ----------------------------------------- */
 
     filter(category) {
 
         const news =
-            this.getNews()
-                .filter(item => {
-
-                    return String(
-                        item.category || ""
-                    )
-                    .toLowerCase()
-                    ===
-                    String(category)
-                        .toLowerCase();
-
-                });
+            this.getCachedNews();
 
 
-        return news;
+        if (
+            !category ||
+            category === "All"
+        ) {
+
+            this.render(news);
+
+            return news;
+
+        }
+
+
+        const results =
+            news.filter(item => {
+
+                return String(
+                    item.category || ""
+                )
+                .toLowerCase()
+                ===
+                String(category)
+                    .toLowerCase();
+
+            });
+
+
+        this.render(results);
+
+        return results;
 
     },
 
 
     /* -----------------------------------------
-       Reset News
-       ----------------------------------------- */
+       Reset Cache
+    ----------------------------------------- */
 
     reset() {
 
@@ -443,7 +539,7 @@ const JanNews = {
             this.storageKey
         );
 
-        this.render();
+        this.load();
 
     }
 
@@ -451,7 +547,7 @@ const JanNews = {
 
 
 /* =========================================
-   Global Functions
+   Global Object
 ========================================= */
 
 window.JanNews =
@@ -459,14 +555,14 @@ window.JanNews =
 
 
 /* =========================================
-   Initialize
+   Start News System
 ========================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function() {
 
-        JanNews.render();
+        JanNews.load();
 
     }
 );
