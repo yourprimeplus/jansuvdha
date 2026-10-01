@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#064b88">
+<meta name="description" content="JanSuvidha - Government schemes, services, scholarships, jobs and important official links.">
+<title>JanSuvidha | Government Services, Simplified</title>
+
+<style>
+:root{
+  --blue:#064b88;
+  --dark:#062d52;
+  --orange:#f58a00;
+  --green:#0f9d58;
+  --bg:#f4f7fb;
+  --white:#fff;
+  --text:#142338;
+  --muted:#68788c;
+  --border:#dce5ee;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid var(--border);
+}
+
+.topbar{
+  max-width:1300px;
+  margin:auto;
+  padding:10px 4%;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.logo{
+  min-width:205px;
+  color:var(--blue);
+  font-size:28px;
+  font-weight:950;
+  line-height:1;
+}
+
+.logo span{
+  color:var(--orange);
+}
+
+.logo small{
+  display:block;
+  font-size:9px;
+  color:#45576b;
+  margin-top:6px;
+  font-weight:600;
+}
+
+.search{
+  flex:1;
+  max-width:560px;
+  height:44px;
+  display:flex;
+  border:1px solid #cbd8e5;
+  border-radius:11px;
+  overflow:hidden;
+  background:white;
+}
+
+.search input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  padding:0 14px;
+}
+
+.search button{
+  width:55px;
+  border:0;
+  background:#0876d1;
+  color:#fff;
+  font-size:20px;
+}
+
+.actions{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.action{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:9px;
+  padding:8px 11px;
+}
+
+.login{
+  background:var(--orange);
+  color:#fff;
+  border:0;
+  font-weight:700;
+}
+
+.timebox{
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* NAV */
+
+.nav{
+  background:var(--dark);
+}
+
+.nav-inner{
+  max-width:1300px;
+  margin:auto;
+  display:flex;
+  overflow-x:auto;
+  padding:0 4%;
+}
+
+.nav button{
+  color:#fff;
+  background:transparent;
+  border:0;
+  padding:13px 15px;
+  white-space:nowrap;
+}
+
+.nav button:hover{
+  background:#0a477e;
+}
+
+/* MAIN */
+
+main{
+  max-width:1300px;
+  margin:auto;
+  padding:22px 4% 60px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:390px;
+  border-radius:25px;
+  padding:55px 6%;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(110deg,rgba(3,38,72,.97),rgba(5,105,177,.91)),
+    url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
+}
+
+.hero:after{
+  content:"🇮🇳";
+  position:absolute;
+  right:7%;
+  top:20px;
+  font-size:150px;
+  opacity:.09;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,65px);
+  line-height:1.03;
+  margin:18px 0;
+}
+
+.orange{
+  color:#ff9a16;
+}
+
+.hero p{
+  max-width:730px;
+  line-height:1.65;
+  font-size:17px;
+}
+
+.hero-search{
+  max-width:750px;
+  height:58px;
+  display:flex;
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  margin-top:25px;
+}
+
+.hero-search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:0 16px;
+  min-width:0;
+}
+
+.hero-search button{
+  border:0;
+  padding:0 27px;
+  background:var(--orange);
+  color:white;
+  font-weight:800;
+}
+
+/* SECTION */
+
+.section{
+  margin-top:30px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:10px;
+}
+
+.section-title h2{
+  margin:0 0 5px;
+}
+
+.muted{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CATEGORY */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.card{
+  display:block;
+  width:100%;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px 10px;
+  text-align:center;
+  transition:.18s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(5,50,90,.10);
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:9px;
+}
+
+.card strong{
+  display:block;
+  font-size:13px;
+}
+
+/* FEATURE CARDS */
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.feature{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+}
+
+.feature-icon{
+  font-size:30px;
+}
+
+.feature h3{
+  margin:10px 0 5px;
+}
+
+/* TWO COLUMN */
+
+.two-column{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:15px;
+}
+
+.panel{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+}
+
+.panel h2{
+  margin-top:0;
+}
+
+.live{
+  color:#e31b23;
+  font-size:11px;
+  font-weight:900;
+}
+
+.news{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:13px 2px;
+  border-bottom:1px solid #edf1f5;
+  font-size:13px;
+}
+
+.news:last-child{
+  border-bottom:0;
+}
+
+.news-time{
+  color:#0b65ad;
+  white-space:nowrap;
+  font-size:11px;
+  font-weight:800;
+}
+
+.badge{
+  background:#ef233c;
+  color:#fff;
+  border-radius:5px;
+  padding:3px 5px;
+  font-size:9px;
+  font-weight:900;
+}
+
+/* SCHEMES */
+
+.scheme{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid #edf1f5;
+}
+
+.scheme:last-child{
+  border-bottom:0;
+}
+
+.scheme-icon{
+  font-size:25px;
+}
+
+.grow{
+  flex:1;
+}
+
+.official{
+  background:#eef7ff;
+  color:#0865ad;
+  border:1px solid #b9dcf8;
+  border-radius:7px;
+  padding:6px 8px;
+  font-size:10px;
+  font-weight:800;
+}
+
+/* LINKS */
+
+.links-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.link-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:17px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  transition:.18s;
+}
+
+.link-card:hover{
+  border-color:#0876d1;
+  transform:translateY(-2px);
+}
+
+.link-icon{
+  font-size:28px;
+}
+
+/* NOTICE */
+
+.notice{
+  margin-top:25px;
+  padding:15px;
+  border-radius:12px;
+  background:#fff7e7;
+  border:1px solid #ffd58a;
+  font-size:12px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#062b4f;
+  color:#c9dcec;
+  padding:38px 4%;
+}
+
+.footer-inner{
+  max-width:1300px;
+  margin:auto;
+}
+
+footer h2{
+  color:white;
+  margin-top:0;
+}
+
+footer p{
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .topbar{
+    flex-wrap:wrap;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+    max-width:none;
+  }
+
+  .actions{
+    margin-left:auto;
+  }
+
+  .grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .links-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .two-column{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  .topbar{
+    padding:9px 4%;
+    gap:9px;
+  }
+
+  .logo{
+    min-width:auto;
+    font-size:23px;
+  }
+
+  .logo small{
+    font-size:7px;
+  }
+
+  .timebox{
+    display:none;
+  }
+
+  .hero{
+    padding:38px 6%;
+    min-height:360px;
+  }
+
+  .hero h1{
+    font-size:37px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .links-grid{
+    grid-template-columns:1fr;
+  }
+
+  .news{
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+
+<a href="#" class="logo">
+Jan<span>Suvidha</span>
+<small>Government Services, Simplified. | सरकारी सेवाएँ, अब आसान।</small>
+</a>
+
+<div class="search">
+<input id="searchInput"
+placeholder="Search schemes, jobs, services..."
+autocomplete="off">
+<button onclick="searchSite()">🔍</button>
+</div>
+
+<div class="actions">
+
+<div class="timebox" id="indiaTime">
+🇮🇳 India | Loading...
+</div>
+
+<button class="action" onclick="toggleLanguage()" id="languageButton">
+हिंदी
+</button>
+
+<button class="action" onclick="toggleTheme()">
+☀️
+</button>
+
+<button class="action login" onclick="showLogin()">
+Login
+</button>
+
+</div>
+
+</div>
+
+<nav class="nav">
+
+<div class="nav-inner">
+
+<button onclick="scrollToSection('home')">Home</button>
+<button onclick="scrollToSection('categories')">All Schemes</button>
+<button onclick="showCategory('Jobs')">Jobs</button>
+<button onclick="showCategory('Education')">Education</button>
+<button onclick="showCategory('Scholarship')">Scholarship</button>
+<button onclick="showCategory('Health')">Health</button>
+<button onclick="showCategory('Farmer')">Farmer</button>
+<button onclick="showCategory('Housing')">Housing</button>
+<button onclick="showCategory('Loans')">Loans</button>
+<button onclick="scrollToSection('links')">Important Links</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<strong>🇮🇳 Citizen Information Portal</strong>
+
+<h1>
+Everything You Need.
+<br>
+<span class="orange">In One Place.</span>
+</h1>
+
+<p>
+Find Government Schemes • Get Information • Apply Easily
+</p>
+
+<p>
+सरकारी योजनाएँ, छात्रवृत्ति, नौकरी, शिक्षा, स्वास्थ्य और जरूरी सरकारी सेवाएँ — एक ही जगह।
+</p>
+
+<div class="hero-search">
+
+<input
+id="heroSearch"
+placeholder="Search schemes, services, jobs or keywords..."
+autocomplete="off">
+
+<button onclick="heroSearch()">Search</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="categories">
+
+<div class="section-title">
+
+<div>
+<h2>Explore by Category</h2>
+<p class="muted">Choose the service you need.</p>
+</div>
+
+</div>
+
+<div class="grid">
+
+<button class="card" onclick="showCategory('Scholarship')">
+<div class="icon">🎓</div>
+<strong>Scholarship</strong>
+<span class="muted">छात्रवृत्ति</span>
+</button>
+
+<button class="card" onclick="showCategory('Jobs')">
+<div class="icon">💼</div>
+<strong>Government Jobs</strong>
+<span class="muted">सरकारी नौकरी</span>
+</button>
+
+<button class="card" onclick="showCategory('Education')">
+<div class="icon">📚</div>
+<strong>Education</strong>
+<span class="muted">शिक्षा</span>
+</button>
+
+<button class="card" onclick="showCategory('Farmer')">
+<div class="icon">🌱</div>
+<strong>Farmer</strong>
+<span class="muted">कृषि योजना</span>
+</button>
+
+<button class="card" onclick="showCategory('Women')">
+<div class="icon">👩</div>
+<strong>Women & Child</strong>
+<span class="muted">महिला एवं बाल</span>
+</button>
+
+<button class="card" onclick="showCategory('Health')">
+<div class="icon">🏥</div>
+<strong>Health</strong>
+<span class="muted">स्वास्थ्य</span>
+</button>
+
+<button class="card" onclick="showCategory('Housing')">
+<div class="icon">🏠</div>
+<strong>Housing</strong>
+<span class="muted">आवास</span>
+</button>
+
+<button class="card" onclick="showCategory('Pension')">
+<div class="icon">👴</div>
+<strong>Pension</strong>
+<span class="muted">पेंशन</span>
+</button>
+
+<button class="card" onclick="showCategory('Loans')">
+<div class="icon">💰</div>
+<strong>Loans & Business</strong>
+<span class="muted">ऋण एवं व्यवसाय</span>
+</button>
+
+<button class="card" onclick="scrollToSection('links')">
+<div class="icon">🔗</div>
+<strong>Important Links</strong>
+<span class="muted">महत्वपूर्ण लिंक</span>
+</button>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="feature-grid">
+
+<div class="feature">
+<div class="feature-icon">🎯</div>
+<h3>Find Schemes For Me</h3>
+<p class="muted">
+Find useful government schemes based on your needs.
+</p>
+<button class="official" onclick="personalizedSearch()">
+Find Now →
+</button>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🔗</div>
+<h3>Official Government Links</h3>
+<p class="muted">
+Direct access to trusted government portals.
+</p>
+<button class="official" onclick="scrollToSection('links')">
+Open Links →
+</button>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🗺️</div>
+<h3>State-wise Schemes</h3>
+<p class="muted">
+Explore government information for your state.
+</p>
+<button class="official" onclick="stateSearch()">
+Choose State →
+</button>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📰</div>
+<h3>Latest Updates</h3>
+<p class="muted">
+Stay informed about important announcements.
+</p>
+<button class="official" onclick="scrollToSection('updates')">
+View Updates →
+</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section two-column" id="updates">
+
+<div class="panel">
+
+<h2>
+Latest Government Updates
+<span class="live">● LIVE</span>
+</h2>
+
+<div id="newsList"></div>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Trending Schemes</h2>
+
+<div id="schemeList"></div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="links">
+
+<div class="section-title">
+
+<div>
+
+<h2>Important Government Links</h2>
+
+<p class="muted">
+Always verify information on the official government website before applying.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="links-grid">
+
+<a class="link-card"
+href="https://www.india.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">🇮🇳</div>
+
+<div>
+<strong>India.gov.in</strong>
+<div class="muted">National Portal of India</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://www.myscheme.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">🧾</div>
+
+<div>
+<strong>myScheme</strong>
+<div class="muted">Find Government Schemes</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://www.pib.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">📰</div>
+
+<div>
+<strong>PIB</strong>
+<div class="muted">Government News</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://www.digilocker.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">📁</div>
+
+<div>
+<strong>DigiLocker</strong>
+<div class="muted">Digital Documents</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://scholarships.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">🎓</div>
+
+<div>
+<strong>National Scholarship Portal</strong>
+<div class="muted">Scholarships</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://uidai.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">🪪</div>
+
+<div>
+<strong>UIDAI</strong>
+<div class="muted">Aadhaar Services</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://web.umang.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">📱</div>
+
+<div>
+<strong>UMANG</strong>
+<div class="muted">Government Services</div>
+</div>
+
+</a>
+
+
+<a class="link-card"
+href="https://www.indiapost.gov.in/"
+target="_blank"
+rel="noopener noreferrer">
+
+<div class="link-icon">📮</div>
+
+<div>
+<strong>India Post</strong>
+<div class="muted">Postal Services</div>
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+
+<div class="notice">
+
+⚠️ <strong>Important:</strong>
+JanSuvidha is an independent citizen-information platform and is not an official government website.
+Always verify eligibility, documents, fees, deadlines and application status on the relevant official government portal.
+
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="footer-inner">
+
+<h2>JanSuvidha 🇮🇳</h2>
+
+<p>
+Government Services, Simplified.
+<br>
+सरकारी सेवाएँ, अब आसान।
+</p>
+
+<p>
+© <span id="year"></span> JanSuvidha. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ================================
+   DATA
+================================ */
+
+const schemes = [
+
+{
+name:"PM-KISAN Samman Nidhi",
+category:"Farmer",
+icon:"🌾",
+url:"https://pmkisan.gov.in/"
+},
+
+{
+name:"PM Awas Yojana",
+category:"Housing",
+icon:"🏠",
+url:"https://pmaymis.gov.in/"
+},
+
+{
+name:"National Scholarship Portal",
+category:"Scholarship",
+icon:"🎓",
+url:"https://scholarships.gov.in/"
+},
+
+{
+name:"Ayushman Bharat PM-JAY",
+category:"Health",
+icon:"🏥",
+url:"https://pmjay.gov.in/"
+},
+
+{
+name:"National Career Service",
+category:"Jobs",
+icon:"💼",
+url:"https://www.ncs.gov.in/"
+}
+
+];
+
+
+const updates = [
+
+"PM-KISAN: Check official portal for latest installment information.",
+
+"Government job applicants should verify current recruitment notifications on official portals.",
+
+"Scholarship students should check application status and deadlines.",
+
+"Check official health schemes and eligibility information.",
+
+"New government services and announcements may be released regularly."
+
+];
+
+
+/* ================================
+   INDIA CLOCK
+================================ */
+
+function updateIndiaTime(){
+
+const now = new Date();
+
+const options = {
+timeZone:"Asia/Kolkata",
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
+hour:"2-digit",
+minute:"2-digit",
+second:"2-digit",
+hour12:true
+};
+
+const formatter =
+new Intl.DateTimeFormat(
+"en-IN",
+options
+);
+
+document.getElementById("indiaTime").innerText =
+"🇮🇳 India | " +
+formatter.format(now) +
+" (IST)";
+
+}
+
+updateIndiaTime();
+
+setInterval(updateIndiaTime,1000);
+
+
+/* ================================
+   YEAR
+================================ */
+
+document.getElementById("year").innerText =
+new Date().getFullYear();
+
+
+/* ================================
+   NEWS
+================================ */
+
+function renderNews(){
+
+const box =
+document.getElementById("newsList");
+
+box.innerHTML = updates.map(
+(item,index)=>`
+
+<div class="news">
+
+<span class="badge">LIVE</span>
+
+<span class="news-time">
+${index+1}0:${index+1}0
+</span>
+
+<span>${item}</span>
+
+</div>
+
+`
+).join("");
+
+}
+
+renderNews();
+
+
+/* ================================
+   SCHEMES
+================================ */
+
+function renderSchemes(list=schemes){
+
+const box =
+document.getElementById("schemeList");
+
+box.innerHTML =
+list.map(
+scheme=>`
+
+<div class="scheme">
+
+<div class="scheme-icon">
+${scheme.icon}
+</div>
+
+<div class="grow">
+
+<strong>${scheme.name}</strong>
+
+<div class="muted">
+${scheme.category}
+</div>
+
+</div>
+
+<a
+class="official"
+href="${scheme.url}"
+target="_blank"
+rel="noopener noreferrer">
+
+Official ↗
+
+</a>
+
+</div>
+
+`
+).join("");
+
+}
+
+renderSchemes();
+
+
+/* ================================
+   SEARCH
+================================ */
+
+function performSearch(value){
+
+const query =
+value.trim().toLowerCase();
+
+if(!query){
+
+alert(
+"Please enter a scheme, service, job or keyword."
+);
+
+return;
+}
+
+const results =
+schemes.filter(item =>
+(item.name+" "+item.category)
+.toLowerCase()
+.includes(query)
+);
+
+if(results.length){
+
+renderSchemes(results);
+
+document
+.getElementById("updates")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}else{
+
+alert(
+"No matching result found in the current database.\n\nPlease check the official government portals listed below."
+);
+
+}
+
+}
+
+
+function searchSite(){
+
+performSearch(
+document.getElementById("searchInput").value
+);
+
+}
+
+
+function heroSearch(){
+
+performSearch(
+document.getElementById("heroSearch").value
+);
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+searchSite();
+}
+
+});
+
+
+document
+.getElementById("heroSearch")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+heroSearch();
+}
+
+});
+
+
+/* ================================
+   CATEGORY
+================================ */
+
+function showCategory(category){
+
+const results =
+schemes.filter(
+item =>
+item.category.toLowerCase()
+=== category.toLowerCase()
+);
+
+if(results.length){
+
+renderSchemes(results);
+
+document
+.getElementById("updates")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}else{
+
+alert(
+"No schemes are currently listed in this category.\n\nOfficial information can be checked through the Important Links section."
+);
+
+}
+
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+function scrollToSection(id){
+
+const element =
+document.getElementById(id);
+
+if(element){
+
+element.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+}
+
+
+/* ================================
+   LANGUAGE
+================================ */
+
+let hindiMode=false;
+
+function toggleLanguage(){
+
+hindiMode=!hindiMode;
+
+const button =
+document.getElementById("languageButton");
+
+button.innerText =
+hindiMode ? "EN" : "हिंदी";
+
+if(hindiMode){
+
+alert(
+"हिंदी मोड सक्रिय है।\n\nJanSuvidha पर सरकारी योजनाएँ, नौकरी, छात्रवृत्ति और महत्वपूर्ण लिंक एक ही जगह मिलेंगे।"
+);
+
+}else{
+
+alert(
+"English mode activated."
+);
+
+}
+
+}
+
+
+/* ================================
+   DARK MODE
+================================ */
+
+let dark=false;
+
+function toggleTheme(){
+
+dark=!dark;
+
+if(dark){
+
+document.body.style.background="#101820";
+document.body.style.color="#f1f5f9";
+
+document
+.querySelectorAll(".card,.panel,.feature,.link-card,.search,.hero-search")
+.forEach(el=>{
+    el.style.background="#172330";
+    el.style.color="#f1f5f9";
+});
+
+}else{
+
+    location.reload();
+
+}
+
+}
+
+
+/* ================================
+   PERSONALIZED SEARCH
+================================ */
+
+function personalizedSearch(){
+
+    const answer = prompt(
+        "What are you looking for?\n\n" +
+        "Examples:\n" +
+        "Scholarship\n" +
+        "Government Job\n" +
+        "Farmer Scheme\n" +
+        "Health\n" +
+        "Housing\n" +
+        "Loan"
+    );
+
+    if(answer){
+        performSearch(answer);
+    }
+
+}
+
+
+/* ================================
+   STATE SEARCH
+================================ */
+
+function stateSearch(){
+
+    const state = prompt(
+        "Enter your State name.\n\n" +
+        "Example: Bihar, Uttar Pradesh, Maharashtra"
+    );
+
+    if(state){
+
+        alert(
+            "State-wise scheme information for " +
+            state +
+            " will be available here.\n\n" +
+            "For the latest verified information, please check the official government portals."
+        );
+
+    }
+
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+function showLogin(){
+
+    alert(
+        "JanSuvidha Login\n\n" +
+        "Secure user accounts will be available after the backend system is connected."
+    );
+
+}
+
+
+/* ================================
+   SAVE SEARCH / USER PREFERENCE
+================================ */
+
+function savePreference(key,value){
+
+    try{
+
+        localStorage.setItem(
+            "jansuvdha_" + key,
+            value
+        );
+
+    }catch(error){
+
+        console.log("Storage unavailable");
+
+    }
+
+}
+
+
+/* ================================
+   LOAD SAVED PREFERENCES
+================================ */
+
+function loadPreferences(){
+
+    try{
+
+        const language =
+            localStorage.getItem("jansuvdha_language");
+
+        if(language === "hindi"){
+
+            hindiMode = true;
+
+            document.getElementById(
+                "languageButton"
+            ).innerText = "EN";
+
+        }
+
+    }catch(error){
+
+        console.log("Preference loading failed");
+
+    }
+
+}
+
+loadPreferences();
+
+
+/* ================================
+   LANGUAGE PREFERENCE
+================================ */
+
+const originalToggleLanguage =
+    toggleLanguage;
+
+toggleLanguage = function(){
+
+    hindiMode = !hindiMode;
+
+    const button =
+        document.getElementById("languageButton");
+
+    if(hindiMode){
+
+        button.innerText = "EN";
+
+        savePreference(
+            "language",
+            "hindi"
+        );
+
+        alert(
+            "हिंदी मोड सक्रिय है।\n\n" +
+            "JanSuvidha पर सरकारी योजनाएँ, " +
+            "नौकरी, छात्रवृत्ति और महत्वपूर्ण " +
+            "लिंक एक ही जगह मिलेंगे।"
+        );
+
+    }else{
+
+        button.innerText = "हिंदी";
+
+        savePreference(
+            "language",
+            "english"
+        );
+
+        alert(
+            "English mode activated."
+        );
+
+    }
+
+};
+
+
+/* ================================
+   CLEAR SEARCH
+================================ */
+
+function clearSearch(){
+
+    document.getElementById(
+        "searchInput"
+    ).value = "";
+
+    document.getElementById(
+        "heroSearch"
+    ).value = "";
+
+    renderSchemes();
+
+}
+
+
+/* ================================
+   ESC KEY
+================================ */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            clearSearch();
+
+        }
+
+    }
+);
+
+
+/* ================================
+   ONLINE / OFFLINE STATUS
+================================ */
+
+function updateConnectionStatus(){
+
+    if(!navigator.onLine){
+
+        console.log(
+            "JanSuvidha: You are currently offline."
+        );
+
+    }else{
+
+        console.log(
+            "JanSuvidha: Online."
+        );
+
+    }
+
+}
+
+window.addEventListener(
+    "online",
+    updateConnectionStatus
+);
+
+window.addEventListener(
+    "offline",
+    updateConnectionStatus
+);
+
+updateConnectionStatus();
+
+
+/* ================================
+   FINAL INITIALIZATION
+================================ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateIndiaTime();
+
+        renderNews();
+
+        renderSchemes();
+
+        loadPreferences();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
