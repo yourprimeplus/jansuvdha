@@ -1759,127 +1759,71 @@ function renderTrending(){
    Render Official Links
 ----------------------------------------- */
 
-function renderLinks(){
+async function renderTrending(){
 
-    const container =
-        document.getElementById("linksGrid");
+  const container =
+    document.getElementById("trendingList");
 
-    if(!container){
-        return;
+  if(!container){
+    return;
+  }
+
+  try{
+
+    const response =
+      await fetch("./data/news.json");
+
+    if(!response.ok){
+      throw new Error("News file not found");
     }
 
+    const news =
+      await response.json();
 
-    const links =
-        JanSuvidha.data.links;
+    if(!Array.isArray(news) || news.length === 0){
 
+      container.innerHTML =
+        "<p>No trending updates available.</p>";
 
-    if(!links.length){
-
-        container.innerHTML =
-            `
-            <div class="muted">
-                Loading official links...
-            </div>
-            `;
-
-        return;
-
+      return;
     }
 
-
-    const icons = [
-        "🇮🇳",
-        "🧾",
-        "📰",
-        "📁",
-        "🪪",
-        "📱",
-        "📮",
-        "💼"
-    ];
-
+    const items =
+      news.slice(0, 5);
 
     container.innerHTML =
-        links.map(
-            (item, index) => `
+      items.map(item => `
 
-                <a
-                    class="link-card"
-                    href="${safeURL(item.url)}"
-                    target="_blank"
-                    rel="noopener noreferrer">
+        <div class="news-item">
 
-                    <div class="link-icon">
-                        ${icons[index % icons.length]}
-                    </div>
+          <span class="live-badge">
+            TRENDING
+          </span>
 
-                    <div>
+          <a
+            href="${item.link || '#'}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration:none;color:inherit;"
+          >
+            ${escapeHTML(item.title || "Government Update")}
+          </a>
 
-                        <strong>
-                            ${escapeHTML(
-                                JanSuvidha.getText(
-                                    item,
-                                    "name"
-                                )
-                            )}
-                        </strong>
+        </div>
 
-                        <div class="muted">
-                            ${escapeHTML(
-                                JanSuvidha.getText(
-                                    item,
-                                    "description"
-                                )
-                            )}
-                        </div>
+      `).join("");
 
-                    </div>
+  }catch(error){
 
-                </a>
+    console.error(
+      "Trending loading error:",
+      error
+    );
 
-            `
-        ).join("");
-
+    container.innerHTML =
+      "<p>Trending updates are temporarily unavailable.</p>";
+  }
 }
-
-
-/* -----------------------------------------
-   Initialize
------------------------------------------ */
-
-async function initializeJanSuvidha(){
-
-    JanNews.render();
-
-    const loaded =
-        await JanSuvidha.loadData();
-
-
-    if(!loaded){
-
-        showToast(
-            "Some data could not be loaded."
-        );
-
-        return;
-
-    }
-
-
-    renderTrending();
-
-    renderLinks();
-
-}
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    initializeJanSuvidha
-);
-
-</script>
-
 <!-- =========================================
      JAN SUVIDHA - PROFILE MODAL
 ========================================= -->
