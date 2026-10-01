@@ -2,613 +2,820 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#064b88">
-<meta name="description" content="JanSuvidha - Government schemes, services, scholarships, jobs and important official links.">
-<title>JanSuvidha | Government Services, Simplified</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#07579b">
+
+<meta name="description"
+content="JanSuvidha - Government schemes, jobs, scholarships, services and official links in one place.">
+
+<title>JanSuvidha | Government Services Simplified</title>
 
 <style>
+
+/* =========================================================
+   JAN SUVIDHA - MAIN DESIGN
+========================================================= */
+
 :root{
-  --blue:#064b88;
-  --dark:#062d52;
-  --orange:#f58a00;
-  --green:#0f9d58;
-  --bg:#f4f7fb;
-  --white:#fff;
-  --text:#142338;
-  --muted:#68788c;
-  --border:#dce5ee;
+    --primary:#07579b;
+    --primary-dark:#04345e;
+    --primary-light:#eaf5ff;
+    --orange:#f58a00;
+    --orange-dark:#dc7200;
+    --green:#138a4b;
+    --red:#df2637;
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#142338;
+    --muted:#68788c;
+    --border:#dce5ee;
+    --shadow:0 8px 25px rgba(0,45,90,.08);
 }
 
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-  margin:0;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
 }
 
-button,input{
-  font:inherit;
+button,
+input,
+select{
+    font:inherit;
 }
 
 button{
-  cursor:pointer;
+    cursor:pointer;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+    color:inherit;
+    text-decoration:none;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid var(--border);
 }
 
 .topbar{
-  max-width:1300px;
-  margin:auto;
-  padding:10px 4%;
-  display:flex;
-  align-items:center;
-  gap:18px;
+    max-width:1350px;
+    margin:auto;
+    padding:10px 4%;
+    display:flex;
+    align-items:center;
+    gap:16px;
 }
 
 .logo{
-  min-width:205px;
-  color:var(--blue);
-  font-size:28px;
-  font-weight:950;
-  line-height:1;
+    min-width:205px;
+    font-size:28px;
+    line-height:1;
+    font-weight:950;
+    color:var(--primary);
 }
 
 .logo span{
-  color:var(--orange);
+    color:var(--orange);
 }
 
 .logo small{
-  display:block;
-  font-size:9px;
-  color:#45576b;
-  margin-top:6px;
-  font-weight:600;
+    display:block;
+    margin-top:6px;
+    color:var(--muted);
+    font-size:9px;
+    font-weight:600;
 }
 
-.search{
-  flex:1;
-  max-width:560px;
-  height:44px;
-  display:flex;
-  border:1px solid #cbd8e5;
-  border-radius:11px;
-  overflow:hidden;
-  background:white;
+.header-search{
+    flex:1;
+    max-width:570px;
+    height:44px;
+    display:flex;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #cbd8e5;
+    border-radius:11px;
 }
 
-.search input{
-  flex:1;
-  min-width:0;
-  border:0;
-  outline:0;
-  padding:0 14px;
+.header-search input{
+    flex:1;
+    min-width:0;
+    padding:0 14px;
+    border:0;
+    outline:0;
 }
 
-.search button{
-  width:55px;
-  border:0;
-  background:#0876d1;
-  color:#fff;
-  font-size:20px;
+.header-search button{
+    width:55px;
+    border:0;
+    background:var(--primary);
+    color:#fff;
+    font-size:19px;
 }
 
-.actions{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-  gap:8px;
+.header-actions{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:7px;
 }
 
-.action{
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius:9px;
-  padding:8px 11px;
+.header-button{
+    padding:8px 11px;
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:9px;
 }
 
-.login{
-  background:var(--orange);
-  color:#fff;
-  border:0;
-  font-weight:700;
+.login-button{
+    background:var(--orange);
+    color:#fff;
+    border:0;
+    font-weight:800;
 }
 
-.timebox{
-  font-size:12px;
-  font-weight:700;
-  white-space:nowrap;
+.india-time{
+    white-space:nowrap;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:800;
 }
 
-/* NAV */
 
-.nav{
-  background:var(--dark);
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+    background:var(--primary-dark);
 }
 
-.nav-inner{
-  max-width:1300px;
-  margin:auto;
-  display:flex;
-  overflow-x:auto;
-  padding:0 4%;
+.navbar-inner{
+    max-width:1350px;
+    margin:auto;
+    display:flex;
+    overflow-x:auto;
+    padding:0 4%;
 }
 
-.nav button{
-  color:#fff;
-  background:transparent;
-  border:0;
-  padding:13px 15px;
-  white-space:nowrap;
+.navbar button{
+    flex:none;
+    border:0;
+    background:transparent;
+    color:#fff;
+    padding:13px 15px;
+    white-space:nowrap;
 }
 
-.nav button:hover{
-  background:#0a477e;
+.navbar button:hover{
+    background:#0a477e;
 }
 
-/* MAIN */
+
+/* =========================================================
+   MAIN
+========================================================= */
 
 main{
-  max-width:1300px;
-  margin:auto;
-  padding:22px 4% 60px;
+    max-width:1350px;
+    margin:auto;
+    padding:22px 4% 60px;
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-  min-height:390px;
-  border-radius:25px;
-  padding:55px 6%;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(110deg,rgba(3,38,72,.97),rgba(5,105,177,.91)),
-    url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1800&q=80")
-    center/cover;
+    position:relative;
+    overflow:hidden;
+    min-height:405px;
+    padding:58px 6%;
+    color:#fff;
+    border-radius:26px;
+
+    background:
+    linear-gradient(
+        110deg,
+        rgba(3,38,72,.97),
+        rgba(5,105,177,.90)
+    );
 }
 
-.hero:after{
-  content:"🇮🇳";
-  position:absolute;
-  right:7%;
-  top:20px;
-  font-size:150px;
-  opacity:.09;
+.hero::after{
+    content:"🇮🇳";
+    position:absolute;
+    right:7%;
+    top:18px;
+    font-size:155px;
+    opacity:.08;
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
+    position:relative;
+    z-index:2;
 }
 
 .hero h1{
-  font-size:clamp(38px,6vw,65px);
-  line-height:1.03;
-  margin:18px 0;
+    margin:18px 0;
+    font-size:clamp(38px,6vw,65px);
+    line-height:1.02;
 }
 
 .orange{
-  color:#ff9a16;
+    color:#ff9a16;
 }
 
 .hero p{
-  max-width:730px;
-  line-height:1.65;
-  font-size:17px;
+    max-width:760px;
+    line-height:1.65;
+    font-size:16px;
 }
 
 .hero-search{
-  max-width:750px;
-  height:58px;
-  display:flex;
-  background:white;
-  border-radius:14px;
-  overflow:hidden;
-  margin-top:25px;
+    max-width:760px;
+    height:58px;
+    display:flex;
+    margin-top:24px;
+    overflow:hidden;
+    background:#fff;
+    border-radius:14px;
 }
 
 .hero-search input{
-  flex:1;
-  border:0;
-  outline:0;
-  padding:0 16px;
-  min-width:0;
+    flex:1;
+    min-width:0;
+    padding:0 16px;
+    border:0;
+    outline:0;
 }
 
 .hero-search button{
-  border:0;
-  padding:0 27px;
-  background:var(--orange);
-  color:white;
-  font-weight:800;
+    padding:0 28px;
+    border:0;
+    background:var(--orange);
+    color:#fff;
+    font-weight:900;
 }
 
-/* SECTION */
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section{
-  margin-top:30px;
+    margin-top:30px;
 }
 
-.section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:10px;
+.section-heading{
+    margin-bottom:13px;
 }
 
-.section-title h2{
-  margin:0 0 5px;
+.section-heading h2{
+    margin:0 0 4px;
 }
 
 .muted{
-  color:var(--muted);
-  font-size:13px;
+    color:var(--muted);
+    font-size:13px;
 }
 
-/* CATEGORY */
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:12px;
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
 }
 
-.card{
-  display:block;
-  width:100%;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px 10px;
-  text-align:center;
-  transition:.18s;
+.category-card{
+    width:100%;
+    padding:18px 10px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    text-align:center;
+    transition:.18s;
 }
 
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 28px rgba(5,50,90,.10);
+.category-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
 }
 
-.icon{
-  font-size:30px;
-  margin-bottom:9px;
+.category-icon{
+    font-size:30px;
+    margin-bottom:8px;
 }
 
-.card strong{
-  display:block;
-  font-size:13px;
+.category-card strong{
+    display:block;
+    font-size:13px;
 }
 
-/* FEATURE CARDS */
 
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-}
-
-.feature{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px;
-}
-
-.feature-icon{
-  font-size:30px;
-}
-
-.feature h3{
-  margin:10px 0 5px;
-}
-
-/* TWO COLUMN */
+/* =========================================================
+   TWO COLUMN
+========================================================= */
 
 .two-column{
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:15px;
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:15px;
 }
 
 .panel{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px;
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
 }
 
 .panel h2{
-  margin-top:0;
+    margin-top:0;
 }
 
 .live{
-  color:#e31b23;
-  font-size:11px;
-  font-weight:900;
+    color:var(--red);
+    font-size:11px;
+    font-weight:900;
 }
 
-.news{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  padding:13px 2px;
-  border-bottom:1px solid #edf1f5;
-  font-size:13px;
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 2px;
+    border-bottom:1px solid #edf1f5;
+    font-size:13px;
 }
 
-.news:last-child{
-  border-bottom:0;
+.news-item:last-child{
+    border-bottom:0;
 }
 
-.news-time{
-  color:#0b65ad;
-  white-space:nowrap;
-  font-size:11px;
-  font-weight:800;
+.live-badge{
+    flex:none;
+    padding:3px 5px;
+    background:var(--red);
+    color:#fff;
+    border-radius:5px;
+    font-size:9px;
+    font-weight:900;
 }
 
-.badge{
-  background:#ef233c;
-  color:#fff;
-  border-radius:5px;
-  padding:3px 5px;
-  font-size:9px;
-  font-weight:900;
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+#searchSection{
+    display:none;
 }
 
-/* SCHEMES */
-
-.scheme{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 0;
-  border-bottom:1px solid #edf1f5;
+.results-header{
+    margin-bottom:14px;
+    color:var(--muted);
+    font-size:13px;
 }
 
-.scheme:last-child{
-  border-bottom:0;
+.results-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
 }
 
-.scheme-icon{
-  font-size:25px;
+.result-card{
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,40,80,.04);
 }
 
-.grow{
-  flex:1;
+.result-category{
+    display:inline-block;
+    padding:4px 7px;
+    color:#0865ad;
+    background:#eef7ff;
+    border-radius:6px;
+    font-size:10px;
+    font-weight:800;
 }
 
-.official{
-  background:#eef7ff;
-  color:#0865ad;
-  border:1px solid #b9dcf8;
-  border-radius:7px;
-  padding:6px 8px;
-  font-size:10px;
-  font-weight:800;
+.result-card h3{
+    margin:12px 0 7px;
+    font-size:17px;
 }
 
-/* LINKS */
+.result-card p{
+    min-height:50px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.5;
+}
+
+.result-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    margin:12px 0;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.active-badge{
+    color:var(--green);
+    font-weight:800;
+}
+
+.result-button{
+    display:inline-block;
+    width:100%;
+    padding:9px;
+    background:var(--primary);
+    color:#fff;
+    border-radius:8px;
+    text-align:center;
+    font-size:12px;
+    font-weight:800;
+}
+
+.no-results{
+    padding:35px 15px;
+    text-align:center;
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
 
 .links-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .link-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:15px;
-  padding:17px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  transition:.18s;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:17px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:15px;
+    transition:.18s;
 }
 
 .link-card:hover{
-  border-color:#0876d1;
-  transform:translateY(-2px);
+    border-color:#0876d1;
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
 }
 
 .link-icon{
-  font-size:28px;
+    font-size:28px;
 }
 
-/* NOTICE */
+
+/* =========================================================
+   NOTICE
+========================================================= */
 
 .notice{
-  margin-top:25px;
-  padding:15px;
-  border-radius:12px;
-  background:#fff7e7;
-  border:1px solid #ffd58a;
-  font-size:12px;
+    margin-top:25px;
+    padding:15px;
+    background:#fff7e7;
+    border:1px solid #ffd58a;
+    border-radius:12px;
+    color:#624600;
+    font-size:12px;
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-  background:#062b4f;
-  color:#c9dcec;
-  padding:38px 4%;
+    padding:40px 4%;
+    background:#062b4f;
+    color:#c9dcec;
 }
 
 .footer-inner{
-  max-width:1300px;
-  margin:auto;
+    max-width:1350px;
+    margin:auto;
 }
 
-footer h2{
-  color:white;
-  margin-top:0;
+.footer-inner h2{
+    margin-top:0;
+    color:#fff;
 }
 
-footer p{
-  font-size:13px;
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    z-index:2000;
+    max-width:90%;
+    padding:12px 18px;
+    transform:translateX(-50%);
+    background:#13263a;
+    color:#fff;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    font-size:13px;
+    opacity:0;
+    pointer-events:none;
+    transition:.25s;
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-
-  .topbar{
-    flex-wrap:wrap;
-  }
-
-  .search{
-    order:3;
-    flex-basis:100%;
-    max-width:none;
-  }
-
-  .actions{
-    margin-left:auto;
-  }
-
-  .grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .feature-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .links-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .two-column{
-    grid-template-columns:1fr;
-  }
+.toast.show{
+    opacity:1;
 }
 
-@media(max-width:520px){
 
-  .topbar{
-    padding:9px 4%;
-    gap:9px;
-  }
+/* =========================================================
+   DARK MODE
+========================================================= */
 
-  .logo{
-    min-width:auto;
-    font-size:23px;
-  }
-
-  .logo small{
-    font-size:7px;
-  }
-
-  .timebox{
-    display:none;
-  }
-
-  .hero{
-    padding:38px 6%;
-    min-height:360px;
-  }
-
-  .hero h1{
-    font-size:37px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .feature-grid{
-    grid-template-columns:1fr;
-  }
-
-  .links-grid{
-    grid-template-columns:1fr;
-  }
-
-  .news{
-    align-items:flex-start;
-  }
+body.dark{
+    --bg:#0e1720;
+    --card:#172330;
+    --text:#f2f6fa;
+    --muted:#aebdca;
+    --border:#2b3b4a;
 }
+
+body.dark header,
+body.dark .header-search,
+body.dark .header-button{
+    background:#121d27;
+}
+
+body.dark .panel,
+body.dark .category-card,
+body.dark .link-card,
+body.dark .result-card,
+body.dark .feature-card{
+    background:#172330;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:950px){
+
+    .topbar{
+        flex-wrap:wrap;
+    }
+
+    .header-search{
+        order:3;
+        flex-basis:100%;
+        max-width:none;
+    }
+
+    .india-time{
+        display:none;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .two-column{
+        grid-template-columns:1fr;
+    }
+
+    .links-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .results-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    .topbar{
+        padding:9px 4%;
+        gap:9px;
+    }
+
+    .logo{
+        min-width:auto;
+        font-size:23px;
+    }
+
+    .logo small{
+        font-size:7px;
+    }
+
+    .hero{
+        min-height:365px;
+        padding:40px 6%;
+    }
+
+    .hero h1{
+        font-size:37px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .links-grid{
+        grid-template-columns:1fr;
+    }
+
+    .results-grid{
+        grid-template-columns:1fr;
+    }
+
+    .header-actions .login-button{
+        display:none;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
 <header>
 
 <div class="topbar">
 
 <a href="#" class="logo">
+
 Jan<span>Suvidha</span>
-<small>Government Services, Simplified. | सरकारी सेवाएँ, अब आसान।</small>
+
+<small>
+Government Services, Simplified. |
+सरकारी सेवाएँ, अब आसान।
+</small>
+
 </a>
 
-<div class="search">
-<input id="searchInput"
+
+<div class="header-search">
+
+<input
+id="mainSearch"
+data-jan-search
+data-lang-placeholder="search"
 placeholder="Search schemes, jobs, services..."
 autocomplete="off">
-<button onclick="searchSite()">🔍</button>
+
+<button onclick="runSearch()">
+🔍
+</button>
+
 </div>
 
-<div class="actions">
 
-<div class="timebox" id="indiaTime">
+<div class="header-actions">
+
+<div class="india-time" id="indiaTime">
 🇮🇳 India | Loading...
 </div>
 
-<button class="action" onclick="toggleLanguage()" id="languageButton">
+
+<button
+class="header-button"
+id="languageButton"
+onclick="toggleLanguage()">
+
 हिंदी
+
 </button>
 
-<button class="action" onclick="toggleTheme()">
-☀️
+
+<button
+class="header-button"
+onclick="toggleDarkMode()">
+
+🌙
+
 </button>
 
-<button class="action login" onclick="showLogin()">
+
+<button
+class="header-button login-button"
+onclick="openLogin()">
+
 Login
+
 </button>
 
 </div>
 
 </div>
 
-<nav class="nav">
 
-<div class="nav-inner">
+<nav class="navbar">
 
-<button onclick="scrollToSection('home')">Home</button>
-<button onclick="scrollToSection('categories')">All Schemes</button>
-<button onclick="showCategory('Jobs')">Jobs</button>
-<button onclick="showCategory('Education')">Education</button>
-<button onclick="showCategory('Scholarship')">Scholarship</button>
-<button onclick="showCategory('Health')">Health</button>
-<button onclick="showCategory('Farmer')">Farmer</button>
-<button onclick="showCategory('Housing')">Housing</button>
-<button onclick="showCategory('Loans')">Loans</button>
-<button onclick="scrollToSection('links')">Important Links</button>
+<div class="navbar-inner">
+
+<button onclick="goTo('home')" data-lang="home">
+Home
+</button>
+
+<button onclick="goTo('categories')" data-lang="allSchemes">
+All Schemes
+</button>
+
+<button onclick="categorySearch('Jobs')" data-lang="jobs">
+Jobs
+</button>
+
+<button onclick="categorySearch('Education')" data-lang="education">
+Education
+</button>
+
+<button onclick="categorySearch('Scholarship')" data-lang="scholarship">
+Scholarship
+</button>
+
+<button onclick="categorySearch('Health')" data-lang="health">
+Health
+</button>
+
+<button onclick="categorySearch('Farmer')" data-lang="farmer">
+Farmer
+</button>
+
+<button onclick="categorySearch('Housing')" data-lang="housing">
+Housing
+</button>
+
+<button onclick="categorySearch('Loans')" data-lang="loans">
+Loans
+</button>
+
+<button onclick="goTo('links')" data-lang="importantLinks">
+Important Links
+</button>
 
 </div>
 
@@ -617,168 +824,66 @@ Login
 </header>
 
 
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
 <main>
+
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
-<strong>🇮🇳 Citizen Information Portal</strong>
+<strong>
+🇮🇳 Citizen Information Portal
+</strong>
 
 <h1>
+
 Everything You Need.
+
 <br>
-<span class="orange">In One Place.</span>
+
+<span class="orange">
+In One Place.
+</span>
+
 </h1>
 
-<p>
-Find Government Schemes • Get Information • Apply Easily
-</p>
 
 <p>
-सरकारी योजनाएँ, छात्रवृत्ति, नौकरी, शिक्षा, स्वास्थ्य और जरूरी सरकारी सेवाएँ — एक ही जगह।
+
+Find government schemes, scholarships,
+jobs, education, health services and
+important official links.
+
 </p>
+
+
+<p>
+
+सरकारी योजनाएँ, छात्रवृत्ति, नौकरी,
+शिक्षा, स्वास्थ्य और जरूरी सरकारी
+सेवाएँ — एक ही जगह।
+
+</p>
+
 
 <div class="hero-search">
 
 <input
 id="heroSearch"
-placeholder="Search schemes, services, jobs or keywords..."
+data-jan-search
+placeholder="Search schemes, jobs, scholarships..."
 autocomplete="off">
 
-<button onclick="heroSearch()">Search</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="categories">
-
-<div class="section-title">
-
-<div>
-<h2>Explore by Category</h2>
-<p class="muted">Choose the service you need.</p>
-</div>
-
-</div>
-
-<div class="grid">
-
-<button class="card" onclick="showCategory('Scholarship')">
-<div class="icon">🎓</div>
-<strong>Scholarship</strong>
-<span class="muted">छात्रवृत्ति</span>
+<button onclick="runHeroSearch()">
+Search
 </button>
 
-<button class="card" onclick="showCategory('Jobs')">
-<div class="icon">💼</div>
-<strong>Government Jobs</strong>
-<span class="muted">सरकारी नौकरी</span>
-</button>
-
-<button class="card" onclick="showCategory('Education')">
-<div class="icon">📚</div>
-<strong>Education</strong>
-<span class="muted">शिक्षा</span>
-</button>
-
-<button class="card" onclick="showCategory('Farmer')">
-<div class="icon">🌱</div>
-<strong>Farmer</strong>
-<span class="muted">कृषि योजना</span>
-</button>
-
-<button class="card" onclick="showCategory('Women')">
-<div class="icon">👩</div>
-<strong>Women & Child</strong>
-<span class="muted">महिला एवं बाल</span>
-</button>
-
-<button class="card" onclick="showCategory('Health')">
-<div class="icon">🏥</div>
-<strong>Health</strong>
-<span class="muted">स्वास्थ्य</span>
-</button>
-
-<button class="card" onclick="showCategory('Housing')">
-<div class="icon">🏠</div>
-<strong>Housing</strong>
-<span class="muted">आवास</span>
-</button>
-
-<button class="card" onclick="showCategory('Pension')">
-<div class="icon">👴</div>
-<strong>Pension</strong>
-<span class="muted">पेंशन</span>
-</button>
-
-<button class="card" onclick="showCategory('Loans')">
-<div class="icon">💰</div>
-<strong>Loans & Business</strong>
-<span class="muted">ऋण एवं व्यवसाय</span>
-</button>
-
-<button class="card" onclick="scrollToSection('links')">
-<div class="icon">🔗</div>
-<strong>Important Links</strong>
-<span class="muted">महत्वपूर्ण लिंक</span>
-</button>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="feature-grid">
-
-<div class="feature">
-<div class="feature-icon">🎯</div>
-<h3>Find Schemes For Me</h3>
-<p class="muted">
-Find useful government schemes based on your needs.
-</p>
-<button class="official" onclick="personalizedSearch()">
-Find Now →
-</button>
-</div>
-
-<div class="feature">
-<div class="feature-icon">🔗</div>
-<h3>Official Government Links</h3>
-<p class="muted">
-Direct access to trusted government portals.
-</p>
-<button class="official" onclick="scrollToSection('links')">
-Open Links →
-</button>
-</div>
-
-<div class="feature">
-<div class="feature-icon">🗺️</div>
-<h3>State-wise Schemes</h3>
-<p class="muted">
-Explore government information for your state.
-</p>
-<button class="official" onclick="stateSearch()">
-Choose State →
-</button>
-</div>
-
-<div class="feature">
-<div class="feature-icon">📰</div>
-<h3>Latest Updates</h3>
-<p class="muted">
-Stay informed about important announcements.
-</p>
-<button class="official" onclick="scrollToSection('updates')">
-View Updates →
-</button>
 </div>
 
 </div>
@@ -786,190 +891,356 @@ View Updates →
 </section>
 
 
-<section class="section two-column" id="updates">
+<!-- SEARCH RESULTS -->
+
+<section
+class="section"
+id="searchSection">
 
 <div class="panel">
 
 <h2>
-Latest Government Updates
-<span class="live">● LIVE</span>
+Search Results
 </h2>
 
-<div id="newsList"></div>
+<div id="searchResults"></div>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section
+class="section"
+id="categories">
+
+<div class="section-heading">
+
+<h2 data-lang="explore">
+Explore by Category
+</h2>
+
+<p class="muted">
+Choose the service you need.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<button
+class="category-card"
+onclick="categorySearch('Scholarship')">
+
+<div class="category-icon">
+🎓
+</div>
+
+<strong>
+Scholarship
+</strong>
+
+<div class="muted">
+छात्रवृत्ति
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Jobs')">
+
+<div class="category-icon">
+💼
+</div>
+
+<strong>
+Government Jobs
+</strong>
+
+<div class="muted">
+सरकारी नौकरी
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Education')">
+
+<div class="category-icon">
+📚
+</div>
+
+<strong>
+Education
+</strong>
+
+<div class="muted">
+शिक्षा
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Farmer')">
+
+<div class="category-icon">
+🌱
+</div>
+
+<strong>
+Farmer
+</strong>
+
+<div class="muted">
+कृषि योजना
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Women')">
+
+<div class="category-icon">
+👩
+</div>
+
+<strong>
+Women & Child
+</strong>
+
+<div class="muted">
+महिला एवं बाल
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Health')">
+
+<div class="category-icon">
+🏥
+</div>
+
+<strong>
+Health
+</strong>
+
+<div class="muted">
+स्वास्थ्य
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Housing')">
+
+<div class="category-icon">
+🏠
+</div>
+
+<strong>
+Housing
+</strong>
+
+<div class="muted">
+आवास
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Pension')">
+
+<div class="category-icon">
+👴
+</div>
+
+<strong>
+Pension
+</strong>
+
+<div class="muted">
+पेंशन
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="categorySearch('Loans')">
+
+<div class="category-icon">
+💰
+</div>
+
+<strong>
+Loans & Business
+</strong>
+
+<div class="muted">
+ऋण एवं व्यवसाय
+</div>
+
+</button>
+
+
+<button
+class="category-card"
+onclick="goTo('links')">
+
+<div class="category-icon">
+🔗
+</div>
+
+<strong>
+Important Links
+</strong>
+
+<div class="muted">
+महत्वपूर्ण लिंक
+</div>
+
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- UPDATES + TRENDING -->
+
+<section
+class="section two-column"
+id="updates">
+
+
+<div class="panel">
+
+<h2 data-lang="latestUpdates">
+Latest Government Updates
+<span class="live">
+● LIVE
+</span>
+</h2>
+
+<div id="newsList">
+
+<div class="news-item">
+<span class="live-badge">LIVE</span>
+<span>
+Loading latest information...
+</span>
+</div>
+
+</div>
 
 </div>
 
 
 <div class="panel">
 
-<h2>Trending Schemes</h2>
+<h2 data-lang="trending">
+Trending Schemes
+</h2>
 
-<div id="schemeList"></div>
+<div id="trendingList">
+
+<div class="news-item">
+Loading...
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<section class="section" id="links">
+<!-- IMPORTANT LINKS -->
 
-<div class="section-title">
+<section
+class="section"
+id="links">
 
-<div>
+<div class="section-heading">
 
-<h2>Important Government Links</h2>
+<h2 data-lang="importantGovernmentLinks">
+Important Government Links
+</h2>
 
 <p class="muted">
-Always verify information on the official government website before applying.
+
+Direct links to official government portals.
+
 </p>
 
 </div>
 
-</div>
 
-
-<div class="links-grid">
-
-<a class="link-card"
-href="https://www.india.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">🇮🇳</div>
-
-<div>
-<strong>India.gov.in</strong>
-<div class="muted">National Portal of India</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://www.myscheme.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">🧾</div>
-
-<div>
-<strong>myScheme</strong>
-<div class="muted">Find Government Schemes</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://www.pib.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">📰</div>
-
-<div>
-<strong>PIB</strong>
-<div class="muted">Government News</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://www.digilocker.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">📁</div>
-
-<div>
-<strong>DigiLocker</strong>
-<div class="muted">Digital Documents</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://scholarships.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">🎓</div>
-
-<div>
-<strong>National Scholarship Portal</strong>
-<div class="muted">Scholarships</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://uidai.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">🪪</div>
-
-<div>
-<strong>UIDAI</strong>
-<div class="muted">Aadhaar Services</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://web.umang.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">📱</div>
-
-<div>
-<strong>UMANG</strong>
-<div class="muted">Government Services</div>
-</div>
-
-</a>
-
-
-<a class="link-card"
-href="https://www.indiapost.gov.in/"
-target="_blank"
-rel="noopener noreferrer">
-
-<div class="link-icon">📮</div>
-
-<div>
-<strong>India Post</strong>
-<div class="muted">Postal Services</div>
-</div>
-
-</a>
+<div
+class="links-grid"
+id="linksGrid">
 
 </div>
 
 </section>
 
 
+<!-- NOTICE -->
+
 <div class="notice">
 
-⚠️ <strong>Important:</strong>
-JanSuvidha is an independent citizen-information platform and is not an official government website.
-Always verify eligibility, documents, fees, deadlines and application status on the relevant official government portal.
+⚠️
+
+<strong>
+Important:
+</strong>
+
+JanSuvidha is an independent
+citizen-information platform and is
+not an official government website.
+
+Always verify eligibility, documents,
+fees, deadlines and application status
+on the relevant official government portal.
 
 </div>
 
+
 </main>
 
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
 <div class="footer-inner">
 
-<h2>JanSuvidha 🇮🇳</h2>
+<h2>
+JanSuvidha 🇮🇳
+</h2>
 
 <p>
 Government Services, Simplified.
@@ -978,7 +1249,9 @@ Government Services, Simplified.
 </p>
 
 <p>
-© <span id="year"></span> JanSuvidha. All Rights Reserved.
+© <span id="year"></span>
+JanSuvidha.
+All Rights Reserved.
 </p>
 
 </div>
@@ -986,445 +1259,299 @@ Government Services, Simplified.
 </footer>
 
 
+<div
+id="toast"
+class="toast">
+</div>
+
+
+<!-- ======================================================
+     JAVASCRIPT FILES
+====================================================== -->
+
+<script src="./js/app.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/language.js"></script>
+
+
 <script>
 
-/* ================================
-   DATA
-================================ */
-
-const schemes = [
-
-{
-name:"PM-KISAN Samman Nidhi",
-category:"Farmer",
-icon:"🌾",
-url:"https://pmkisan.gov.in/"
-},
-
-{
-name:"PM Awas Yojana",
-category:"Housing",
-icon:"🏠",
-url:"https://pmaymis.gov.in/"
-},
-
-{
-name:"National Scholarship Portal",
-category:"Scholarship",
-icon:"🎓",
-url:"https://scholarships.gov.in/"
-},
-
-{
-name:"Ayushman Bharat PM-JAY",
-category:"Health",
-icon:"🏥",
-url:"https://pmjay.gov.in/"
-},
-
-{
-name:"National Career Service",
-category:"Jobs",
-icon:"💼",
-url:"https://www.ncs.gov.in/"
-}
-
-];
+/* =========================================================
+   JAN SUVIDHA FRONTEND CONTROLLER
+========================================================= */
 
 
-const updates = [
-
-"PM-KISAN: Check official portal for latest installment information.",
-
-"Government job applicants should verify current recruitment notifications on official portals.",
-
-"Scholarship students should check application status and deadlines.",
-
-"Check official health schemes and eligibility information.",
-
-"New government services and announcements may be released regularly."
-
-];
-
-
-/* ================================
-   INDIA CLOCK
-================================ */
+/* -----------------------------------------
+   India Time
+----------------------------------------- */
 
 function updateIndiaTime(){
 
-const now = new Date();
+    const element =
+        document.getElementById(
+            "indiaTime"
+        );
 
-const options = {
-timeZone:"Asia/Kolkata",
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit",
-second:"2-digit",
-hour12:true
-};
+    if(!element){
+        return;
+    }
 
-const formatter =
-new Intl.DateTimeFormat(
-"en-IN",
-options
-);
+    const now = new Date();
 
-document.getElementById("indiaTime").innerText =
-"🇮🇳 India | " +
-formatter.format(now) +
-" (IST)";
+    const formatter =
+        new Intl.DateTimeFormat(
+            "en-IN",
+            {
+                timeZone:"Asia/Kolkata",
+                day:"2-digit",
+                month:"short",
+                year:"numeric",
+                hour:"2-digit",
+                minute:"2-digit",
+                second:"2-digit",
+                hour12:true
+            }
+        );
+
+    element.innerText =
+        "🇮🇳 India | " +
+        formatter.format(now) +
+        " IST";
 
 }
 
 updateIndiaTime();
 
-setInterval(updateIndiaTime,1000);
+setInterval(
+    updateIndiaTime,
+    1000
+);
 
 
-/* ================================
-   YEAR
-================================ */
+/* -----------------------------------------
+   Year
+----------------------------------------- */
 
-document.getElementById("year").innerText =
+document.getElementById(
+    "year"
+).innerText =
 new Date().getFullYear();
 
 
-/* ================================
-   NEWS
-================================ */
+/* -----------------------------------------
+   Toast
+----------------------------------------- */
 
-function renderNews(){
+function showToast(message){
 
-const box =
-document.getElementById("newsList");
+    const toast =
+        document.getElementById(
+            "toast"
+        );
 
-box.innerHTML = updates.map(
-(item,index)=>`
+    toast.innerText =
+        message;
 
-<div class="news">
+    toast.classList.add(
+        "show"
+    );
 
-<span class="badge">LIVE</span>
+    setTimeout(
+        function(){
 
-<span class="news-time">
-${index+1}0:${index+1}0
-</span>
+            toast.classList.remove(
+                "show"
+            );
 
-<span>${item}</span>
-
-</div>
-
-`
-).join("");
-
-}
-
-renderNews();
-
-
-/* ================================
-   SCHEMES
-================================ */
-
-function renderSchemes(list=schemes){
-
-const box =
-document.getElementById("schemeList");
-
-box.innerHTML =
-list.map(
-scheme=>`
-
-<div class="scheme">
-
-<div class="scheme-icon">
-${scheme.icon}
-</div>
-
-<div class="grow">
-
-<strong>${scheme.name}</strong>
-
-<div class="muted">
-${scheme.category}
-</div>
-
-</div>
-
-<a
-class="official"
-href="${scheme.url}"
-target="_blank"
-rel="noopener noreferrer">
-
-Official ↗
-
-</a>
-
-</div>
-
-`
-).join("");
-
-}
-
-renderSchemes();
-
-
-/* ================================
-   SEARCH
-================================ */
-
-function performSearch(value){
-
-const query =
-value.trim().toLowerCase();
-
-if(!query){
-
-alert(
-"Please enter a scheme, service, job or keyword."
-);
-
-return;
-}
-
-const results =
-schemes.filter(item =>
-(item.name+" "+item.category)
-.toLowerCase()
-.includes(query)
-);
-
-if(results.length){
-
-renderSchemes(results);
-
-document
-.getElementById("updates")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}else{
-
-alert(
-"No matching result found in the current database.\n\nPlease check the official government portals listed below."
-);
-
-}
+        },
+        2500
+    );
 
 }
 
 
-function searchSite(){
+/* -----------------------------------------
+   Navigation
+----------------------------------------- */
 
-performSearch(
-document.getElementById("searchInput").value
-);
+function goTo(id){
 
-}
+    const element =
+        document.getElementById(id);
 
+    if(element){
 
-function heroSearch(){
+        element.scrollIntoView({
+            behavior:"smooth"
+        });
 
-performSearch(
-document.getElementById("heroSearch").value
-);
-
-}
-
-
-/* ENTER KEY SEARCH */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-"keydown",
-function(e){
-
-if(e.key==="Enter"){
-searchSite();
-}
-
-});
-
-
-document
-.getElementById("heroSearch")
-.addEventListener(
-"keydown",
-function(e){
-
-if(e.key==="Enter"){
-heroSearch();
-}
-
-});
-
-
-/* ================================
-   CATEGORY
-================================ */
-
-function showCategory(category){
-
-const results =
-schemes.filter(
-item =>
-item.category.toLowerCase()
-=== category.toLowerCase()
-);
-
-if(results.length){
-
-renderSchemes(results);
-
-document
-.getElementById("updates")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}else{
-
-alert(
-"No schemes are currently listed in this category.\n\nOfficial information can be checked through the Important Links section."
-);
-
-}
+    }
 
 }
 
 
-/* ================================
-   NAVIGATION
-================================ */
+/* -----------------------------------------
+   Search
+----------------------------------------- */
 
-function scrollToSection(id){
+function runSearch(){
 
-const element =
-document.getElementById(id);
+    const input =
+        document.getElementById("mainSearch");
 
-if(element){
+    if(!input){
+        return;
+    }
 
-element.scrollIntoView({
-behavior:"smooth"
-});
+    const query = input.value.trim();
+
+    if(!query){
+
+        showToast(
+            "Please enter something to search."
+        );
+
+        return;
+    }
+
+    searchJanSuvidha(query);
+
+    const section =
+        document.getElementById("searchSection");
+
+    if(section){
+
+        section.style.display = "block";
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
 
 }
 
+
+function runHeroSearch(){
+
+    const input =
+        document.getElementById("heroSearch");
+
+    if(!input){
+        return;
+    }
+
+    const query = input.value.trim();
+
+    if(!query){
+
+        showToast(
+            "Please enter something to search."
+        );
+
+        return;
+    }
+
+    const mainSearch =
+        document.getElementById("mainSearch");
+
+    if(mainSearch){
+
+        mainSearch.value = query;
+
+    }
+
+    searchJanSuvidha(query);
+
+    const section =
+        document.getElementById("searchSection");
+
+    if(section){
+
+        section.style.display = "block";
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
 }
 
 
-/* ================================
-   LANGUAGE
-================================ */
+/* -----------------------------------------
+   Category Search
+----------------------------------------- */
 
-let hindiMode=false;
+function categorySearch(category){
+
+    filterJanSuvidha(category);
+
+    const section =
+        document.getElementById("searchSection");
+
+    if(section){
+
+        section.style.display = "block";
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   Dark Mode
+----------------------------------------- */
+
+function toggleDarkMode(){
+
+    document.body.classList.toggle("dark");
+
+    const isDark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "jansuvdha_dark",
+        isDark ? "1" : "0"
+    );
+
+}
+
+
+/* Load saved theme */
+
+if(
+    localStorage.getItem("jansuvdha_dark") === "1"
+){
+
+    document.body.classList.add("dark");
+
+}
+
+
+/* -----------------------------------------
+   Language
+----------------------------------------- */
 
 function toggleLanguage(){
 
-hindiMode=!hindiMode;
+    if(
+        typeof JanLanguage !== "undefined"
+    ){
 
-const button =
-document.getElementById("languageButton");
+        JanLanguage.toggle();
 
-button.innerText =
-hindiMode ? "EN" : "हिंदी";
-
-if(hindiMode){
-
-alert(
-"हिंदी मोड सक्रिय है।\n\nJanSuvidha पर सरकारी योजनाएँ, नौकरी, छात्रवृत्ति और महत्वपूर्ण लिंक एक ही जगह मिलेंगे।"
-);
-
-}else{
-
-alert(
-"English mode activated."
-);
-
-}
-
-}
-
-
-/* ================================
-   DARK MODE
-================================ */
-
-let dark=false;
-
-function toggleTheme(){
-
-dark=!dark;
-
-if(dark){
-
-document.body.style.background="#101820";
-document.body.style.color="#f1f5f9";
-
-document
-.querySelectorAll(".card,.panel,.feature,.link-card,.search,.hero-search")
-.forEach(el=>{
-    el.style.background="#172330";
-    el.style.color="#f1f5f9";
-});
-
-}else{
-
-    location.reload();
-
-}
-
-}
-
-
-/* ================================
-   PERSONALIZED SEARCH
-================================ */
-
-function personalizedSearch(){
-
-    const answer = prompt(
-        "What are you looking for?\n\n" +
-        "Examples:\n" +
-        "Scholarship\n" +
-        "Government Job\n" +
-        "Farmer Scheme\n" +
-        "Health\n" +
-        "Housing\n" +
-        "Loan"
-    );
-
-    if(answer){
-        performSearch(answer);
-    }
-
-}
-
-
-/* ================================
-   STATE SEARCH
-================================ */
-
-function stateSearch(){
-
-    const state = prompt(
-        "Enter your State name.\n\n" +
-        "Example: Bihar, Uttar Pradesh, Maharashtra"
-    );
-
-    if(state){
-
-        alert(
-            "State-wise scheme information for " +
-            state +
-            " will be available here.\n\n" +
-            "For the latest verified information, please check the official government portals."
+        showToast(
+            JanLanguage.current === "hi"
+                ? "हिंदी भाषा सक्रिय"
+                : "English language activated"
         );
 
     }
@@ -1432,214 +1559,264 @@ function stateSearch(){
 }
 
 
-/* ================================
-   LOGIN
-================================ */
+/* -----------------------------------------
+   Login
+----------------------------------------- */
 
-function showLogin(){
+function openLogin(){
 
-    alert(
-        "JanSuvidha Login\n\n" +
-        "Secure user accounts will be available after the backend system is connected."
+    showToast(
+        "Secure account system will be added with the backend."
     );
 
 }
 
 
-/* ================================
-   SAVE SEARCH / USER PREFERENCE
-================================ */
+/* -----------------------------------------
+   Render News
+----------------------------------------- */
 
-function savePreference(key,value){
+function renderNews(){
 
-    try{
+    const container =
+        document.getElementById("newsList");
 
-        localStorage.setItem(
-            "jansuvdha_" + key,
-            value
-        );
-
-    }catch(error){
-
-        console.log("Storage unavailable");
-
+    if(!container){
+        return;
     }
+
+    const news = [
+
+        "Check official government portals for newly announced schemes.",
+
+        "Students should verify scholarship deadlines and application status.",
+
+        "Job seekers should verify recruitment notifications on official portals.",
+
+        "Farmers can check official portals for current agriculture benefits.",
+
+        "Always verify government announcements from official sources."
+
+    ];
+
+
+    container.innerHTML =
+        news.map(
+            item => `
+
+                <div class="news-item">
+
+                    <span class="live-badge">
+                        LIVE
+                    </span>
+
+                    <span>
+                        ${escapeHTML(item)}
+                    </span>
+
+                </div>
+
+            `
+        ).join("");
 
 }
 
 
-/* ================================
-   LOAD SAVED PREFERENCES
-================================ */
+/* -----------------------------------------
+   Render Trending Schemes
+----------------------------------------- */
 
-function loadPreferences(){
+function renderTrending(){
 
-    try{
+    const container =
+        document.getElementById("trendingList");
 
-        const language =
-            localStorage.getItem("jansuvdha_language");
+    if(!container){
+        return;
+    }
 
-        if(language === "hindi"){
+    const all =
+        JanSuvidha.getAllData();
 
-            hindiMode = true;
+    const items =
+        all.slice(0, 5);
 
-            document.getElementById(
-                "languageButton"
-            ).innerText = "EN";
 
-        }
+    if(!items.length){
 
-    }catch(error){
+        container.innerHTML =
+            `
+            <div class="news-item">
+                Loading schemes...
+            </div>
+            `;
 
-        console.log("Preference loading failed");
+        return;
 
     }
 
-}
 
-loadPreferences();
+    container.innerHTML =
+        items.map(
+            item => `
 
+                <div class="news-item">
 
-/* ================================
-   LANGUAGE PREFERENCE
-================================ */
+                    <span>
+                        📌
+                    </span>
 
-const originalToggleLanguage =
-    toggleLanguage;
+                    <span>
 
-toggleLanguage = function(){
+                        <strong>
+                            ${escapeHTML(
+                                item.name
+                            )}
+                        </strong>
 
-    hindiMode = !hindiMode;
+                        <br>
 
-    const button =
-        document.getElementById("languageButton");
+                        <small class="muted">
+                            ${escapeHTML(
+                                item.category || ""
+                            )}
+                        </small>
 
-    if(hindiMode){
+                    </span>
 
-        button.innerText = "EN";
+                </div>
 
-        savePreference(
-            "language",
-            "hindi"
-        );
-
-        alert(
-            "हिंदी मोड सक्रिय है।\n\n" +
-            "JanSuvidha पर सरकारी योजनाएँ, " +
-            "नौकरी, छात्रवृत्ति और महत्वपूर्ण " +
-            "लिंक एक ही जगह मिलेंगे।"
-        );
-
-    }else{
-
-        button.innerText = "हिंदी";
-
-        savePreference(
-            "language",
-            "english"
-        );
-
-        alert(
-            "English mode activated."
-        );
-
-    }
-
-};
-
-
-/* ================================
-   CLEAR SEARCH
-================================ */
-
-function clearSearch(){
-
-    document.getElementById(
-        "searchInput"
-    ).value = "";
-
-    document.getElementById(
-        "heroSearch"
-    ).value = "";
-
-    renderSchemes();
+            `
+        ).join("");
 
 }
 
 
-/* ================================
-   ESC KEY
-================================ */
+/* -----------------------------------------
+   Render Official Links
+----------------------------------------- */
 
-document.addEventListener(
-    "keydown",
-    function(event){
+function renderLinks(){
 
-        if(event.key === "Escape"){
+    const container =
+        document.getElementById("linksGrid");
 
-            clearSearch();
+    if(!container){
+        return;
+    }
 
-        }
+
+    const links =
+        JanSuvidha.data.links;
+
+
+    if(!links.length){
+
+        container.innerHTML =
+            `
+            <div class="muted">
+                Loading official links...
+            </div>
+            `;
+
+        return;
 
     }
-);
 
 
-/* ================================
-   ONLINE / OFFLINE STATUS
-================================ */
+    const icons = [
+        "🇮🇳",
+        "🧾",
+        "📰",
+        "📁",
+        "🪪",
+        "📱",
+        "📮",
+        "💼"
+    ];
 
-function updateConnectionStatus(){
 
-    if(!navigator.onLine){
+    container.innerHTML =
+        links.map(
+            (item, index) => `
 
-        console.log(
-            "JanSuvidha: You are currently offline."
-        );
+                <a
+                    class="link-card"
+                    href="${safeURL(item.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-    }else{
+                    <div class="link-icon">
+                        ${icons[index % icons.length]}
+                    </div>
 
-        console.log(
-            "JanSuvidha: Online."
-        );
+                    <div>
 
-    }
+                        <strong>
+                            ${escapeHTML(
+                                JanSuvidha.getText(
+                                    item,
+                                    "name"
+                                )
+                            )}
+                        </strong>
+
+                        <div class="muted">
+                            ${escapeHTML(
+                                JanSuvidha.getText(
+                                    item,
+                                    "description"
+                                )
+                            )}
+                        </div>
+
+                    </div>
+
+                </a>
+
+            `
+        ).join("");
 
 }
 
-window.addEventListener(
-    "online",
-    updateConnectionStatus
-);
 
-window.addEventListener(
-    "offline",
-    updateConnectionStatus
-);
+/* -----------------------------------------
+   Initialize
+----------------------------------------- */
 
-updateConnectionStatus();
+async function initializeJanSuvidha(){
+
+    renderNews();
+
+    const loaded =
+        await JanSuvidha.loadData();
 
 
-/* ================================
-   FINAL INITIALIZATION
-================================ */
+    if(!loaded){
+
+        showToast(
+            "Some data could not be loaded."
+        );
+
+        return;
+
+    }
+
+
+    renderTrending();
+
+    renderLinks();
+
+}
+
 
 document.addEventListener(
     "DOMContentLoaded",
-    function(){
-
-        updateIndiaTime();
-
-        renderNews();
-
-        renderSchemes();
-
-        loadPreferences();
-
-    }
+    initializeJanSuvidha
 );
 
 </script>
+
 
 </body>
 </html>
