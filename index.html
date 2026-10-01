@@ -2270,5 +2270,57 @@ document.addEventListener(
 <!-- Profile JavaScript -->
 
 <script src="./js/profile.js"></script>
+   <script>
+async function loadAutoNews() {
+    const container = document.getElementById("newsList");
+
+    if (!container) return;
+
+    try {
+        const response = await fetch("./data/news.json");
+
+        if (!response.ok) {
+            throw new Error("News file not found");
+        }
+
+        const news = await response.json();
+
+        if (!Array.isArray(news) || news.length === 0) {
+            container.innerHTML =
+                "<p>No latest updates available.</p>";
+            return;
+        }
+
+        container.innerHTML = news.map(item => `
+            <div class="news-item">
+                <span class="live-badge">LIVE</span>
+
+                <a
+                    href="${item.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="text-decoration:none;color:inherit;"
+                >
+                    ${escapeHTML(item.title)}
+                </a>
+            </div>
+        `).join("");
+
+    } catch (error) {
+        console.error("News loading error:", error);
+
+        container.innerHTML =
+            "<p>Latest updates are temporarily unavailable.</p>";
+    }
+}
+
+function escapeHTML(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+loadAutoNews();
+   </script>
 </body>
 </html>
