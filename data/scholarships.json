@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nsp",
+    "name": "National Scholarship Portal",
+    "nameHi": "राष्ट्रीय छात्रवृत्ति पोर्टल",
+    "category": "Scholarship",
+    "categoryHi": "छात्रवृत्ति",
+    "description": "Official Government of India portal for scholarship applications.",
+    "descriptionHi": "छात्रवृत्ति आवेदन के लिए भारत सरकार का आधिकारिक पोर्टल।",
+    "state": "All India",
+    "officialUrl": "https://scholarships.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "pm-yasasvi",
+    "name": "PM YASASVI Scholarship",
+    "nameHi": "पीएम यशस्वी छात्रवृत्ति",
+    "category": "Scholarship",
+    "categoryHi": "छात्रवृत्ति",
+    "description": "Scholarship support for eligible students under the PM YASASVI scheme.",
+    "descriptionHi": "PM YASASVI योजना के अंतर्गत पात्र विद्यार्थियों के लिए छात्रवृत्ति सहायता।",
+    "state": "All India",
+    "officialUrl": "https://scholarships.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "minority-scholarship",
+    "name": "Minority Scholarship Schemes",
+    "nameHi": "अल्पसंख्यक छात्रवृत्ति योजनाएँ",
+    "category": "Scholarship",
+    "categoryHi": "छात्रवृत्ति",
+    "description": "Government scholarship opportunities for eligible minority students.",
+    "descriptionHi": "पात्र अल्पसंख्यक विद्यार्थियों के लिए सरकारी छात्रवृत्ति के अवसर।",
+    "state": "All India",
+    "officialUrl": "https://scholarships.gov.in/",
+    "status": "active"
+  },
+  {
+    "id": "bihar-scholarship",
+    "name": "Bihar Post Matric Scholarship",
+    "nameHi": "बिहार पोस्ट मैट्रिक छात्रवृत्ति",
+    "category": "Scholarship",
+    "categoryHi": "छात्रवृत्ति",
+    "description": "Scholarship information for eligible students studying in Bihar.",
+    "descriptionHi": "बिहार में अध्ययन कर रहे पात्र विद्यार्थियों के लिए छात्रवृत्ति की जानकारी।",
+    "state": "Bihar",
+    "officialUrl": "https://pmsonline.bih.nic.in/",
+    "status": "active"
+  }
+]
