@@ -2265,6 +2265,10 @@ function escapeHTML(text) {
 }
 
 loadAutoNews();
+      setInterval(() => {
+  loadAutoNews();
+  renderTrending();
+}, 5 * 60 * 1000);
    </script>
 </body>
 </html>
