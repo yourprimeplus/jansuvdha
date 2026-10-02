@@ -1705,56 +1705,54 @@ function renderTrending(){
     const items =
         all.slice(0, 5);
 
-
     if(!items.length){
 
-        container.innerHTML =
-            `
+        container.innerHTML = `
             <div class="news-item">
-                Loading schemes...
+                No schemes available.
             </div>
-            `;
+        `;
 
         return;
-
     }
 
+    window.__trendingItems = items;
 
     container.innerHTML =
-        items.map(
-            item => `
+        items.map((item, index) => `
 
-                <div class="news-item">
+            <div
+                class="news-item"
+                style="cursor:pointer;"
+                onclick="JanSchemeDetails.open(window.__trendingItems[${index}])"
+            >
 
-                    <span>
-                        📌
-                    </span>
+                <span>📌</span>
 
-                    <span>
+                <span>
 
-                        <strong>
-                            ${escapeHTML(
-                                item.name
-                            )}
-                        </strong>
+                    <strong>
+                        ${escapeHTML(
+                            item.name ||
+                            item.title ||
+                            "Government Scheme"
+                        )}
+                    </strong>
 
-                        <br>
+                    <br>
 
-                        <small class="muted">
-                            ${escapeHTML(
-                                item.category || ""
-                            )}
-                        </small>
+                    <small class="muted">
+                        ${escapeHTML(
+                            item.category || ""
+                        )}
+                    </small>
 
-                    </span>
+                </span>
 
-                </div>
+            </div>
 
-            `
-        ).join("");
-
+        `).join("");
 }
-
 
 /* -----------------------------------------
    Render Official Links
