@@ -1690,70 +1690,85 @@ function openLogin(){
    Render Trending Schemes
 ----------------------------------------- */
 
-function renderTrending(){
+function renderTrending() {
+    const container = document.getElementById("trendingList");
 
-    const container =
-        document.getElementById("trendingList");
+    if (!container) return;
 
-    if(!container){
-        return;
-    }
+    container.innerHTML = `
+        <div class="news-item">
+            Loading latest schemes...
+        </div>
+    `;
 
-    const all =
-        JanSuvidha.getAllData();
+    fetch("./data/news.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("News file not found");
+            }
+            return response.json();
+        })
+        .then(news => {
 
-    const items =
-        all.slice(0, 5);
+            if (!Array.isArray(news) || news.length === 0) {
+                container.innerHTML = `
+                    <div class="news-item">
+                        No latest updates available.
+                    </div>
+                `;
+                return;
+            }
 
-    if(!items.length){
+            const items = news.slice(0, 5);
 
-        container.innerHTML = `
-            <div class="news-item">
-                No schemes available.
-            </div>
-        `;
+            container.innerHTML = items.map(item => `
+                <div class="news-item">
 
-        return;
-    }
+                    <span style="
+                        display:inline-block;
+                        font-size:11px;
+                        font-weight:700;
+                        color:#fff;
+                        background:#e63946;
+                        padding:3px 7px;
+                        border-radius:10px;
+                        margin-bottom:6px;
+                    ">
+                        TRENDING
+                    </span>
 
-    window.__trendingItems = items;
-
-    container.innerHTML =
-        items.map((item, index) => `
-
-            <div
-                class="news-item"
-                style="cursor:pointer;"
-                onclick="JanSchemeDetails.open(window.__trendingItems[${index}])"
-            >
-
-                <span>📌</span>
-
-                <span>
-
-                    <strong>
-                        ${escapeHTML(
-                            item.name ||
-                            item.title ||
-                            "Government Scheme"
-                        )}
-                    </strong>
-
-                    <br>
+                    <a
+                        href="${item.link || '#'}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="
+                            display:block;
+                            text-decoration:none;
+                            color:inherit;
+                            font-weight:700;
+                        "
+                    >
+                        ${escapeHTML(item.title || "Government Update")}
+                    </a>
 
                     <small class="muted">
-                        ${escapeHTML(
-                            item.category || ""
-                        )}
+                        ${escapeHTML(item.date || "")}
                     </small>
 
-                </span>
+                </div>
+            `).join("");
+        })
+        .catch(error => {
 
-            </div>
+            console.error("Trending loading error:", error);
 
-        `).join("");
-}
-
+            container.innerHTML = `
+                <div class="news-item">
+                    Latest updates are temporarily unavailable.
+                </div>
+            `;
+        });
+                           }
 /* -----------------------------------------
    Render Official Links
 ----------------------------------------- */
