@@ -2452,5 +2452,53 @@ loadAutoNews();
     </div>
 
 </div>
+   <script>
+const JanSchemeDetails = {
+
+  open(item) {
+
+    const modal = document.getElementById("schemeDetailsModal");
+
+    if (!modal) return;
+
+    document.getElementById("schemeDetailsTitle").textContent =
+      item.title || "Scheme Details";
+
+    document.getElementById("schemeDetailsDescription").textContent =
+      item.description || "Official scheme information.";
+
+    document.getElementById("schemeDetailsBenefits").innerHTML =
+      item.benefits || "Benefits information not available.";
+
+    document.getElementById("schemeDetailsEligibility").innerHTML =
+      item.eligibility || "Eligibility information not available.";
+
+    document.getElementById("schemeDetailsDocuments").innerHTML =
+      item.documents || "Required documents information not available.";
+
+    const apply = document.getElementById("schemeDetailsApply");
+
+    if (apply) {
+      apply.href = item.link || "#";
+    }
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+  },
+
+  close() {
+
+    const modal = document.getElementById("schemeDetailsModal");
+
+    if (!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "";
+  }
+
+};
+   </script>
 </body>
 </html>
